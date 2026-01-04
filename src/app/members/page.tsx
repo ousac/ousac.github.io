@@ -13,14 +13,14 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
  */
 export default function Members() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gray-50 pt-32 pb-32">
+    <div className="relative min-h-screen overflow-hidden bg-gray-50 pt-24 pb-24 md:pt-32 md:pb-32">
       {/* Decorative Background Elements */}
       <div className="pointer-events-none absolute top-0 right-0 -mt-64 -mr-64 h-[800px] w-[800px] rounded-full bg-gradient-to-br from-blue-100 to-purple-100 opacity-50 blur-3xl"></div>
       <div className="pointer-events-none absolute bottom-0 left-0 -mb-64 -ml-64 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-yellow-100 to-orange-100 opacity-50 blur-3xl"></div>
 
       <div className="relative container mx-auto px-6">
         {/* Header Section */}
-        <div className="animate-fade-in-up mx-auto mb-24 max-w-3xl text-center">
+        <div className="animate-fade-in-up mx-auto mb-16 max-w-3xl text-center md:mb-24">
           <span className="bg-ousac-blue/10 text-ousac-blue mb-6 inline-block rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
             The Coalition
           </span>
@@ -37,11 +37,11 @@ export default function Members() {
         </div>
 
         {/* Clubs Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {MEMBER_CLUBS.map((club, idx) => (
             <div
               key={club.id}
-              className="group animate-fade-in-up relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/50 bg-white/60 p-8 shadow-xl shadow-gray-200/40 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10"
+              className="group animate-fade-in-up relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/50 bg-white/60 p-6 shadow-xl shadow-gray-200/40 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 md:p-8"
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {/* Hover Gradient Overlay */}

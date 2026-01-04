@@ -147,11 +147,13 @@ export default function Sponsors() {
             universities.
           </p>
           <a
-            href="mailto:info.ousac@gmail.com"
+            href="https://drive.google.com/file/d/1CsZQhmkIYqIUHuJ_nr6anJXY_E_kW_rq/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-ousac-black inline-flex items-center gap-2 rounded px-8 py-4 text-sm font-bold tracking-wider text-white uppercase shadow-lg transition-all hover:bg-gray-800 hover:shadow-xl"
           >
             <Mail className="h-4 w-4" />
-            Become a Sponsor
+            Sponsorship Package
           </a>
         </div>
       </div>

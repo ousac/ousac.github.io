@@ -18,13 +18,13 @@ export default function Error({
 
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
-      <div className="mb-6 rounded-full bg-red-50 p-4 dark:bg-red-900/20">
-        <AlertCircle size={48} className="text-red-500 dark:text-red-400" />
+      <div className="mb-6 rounded-full bg-red-50 p-4">
+        <AlertCircle size={48} className="text-red-500" />
       </div>
-      <h2 className="font-display mb-3 text-3xl font-bold text-gray-900 dark:text-white">
+      <h2 className="font-display mb-3 text-3xl font-bold text-gray-900">
         Something went wrong
       </h2>
-      <p className="mb-8 max-w-md text-gray-600 dark:text-gray-400">
+      <p className="mb-8 max-w-md text-gray-600">
         We encountered an unexpected error while loading this page. Our team has
         been notified.
       </p>

@@ -80,7 +80,7 @@ export default function Home() {
                 {SITE_CONTENT.hero.ctaMain}
               </AnimatedShinyButton>
               <Link
-                href="/schedule"
+                href="/conference/schedule"
                 className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors"
                 // Adjusted padding/rounded to match the Shiny button roughly if needed,
                 // but kept similar specific styles.
@@ -176,7 +176,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="/speakers"
+              href="/conference/speakers"
               className="text-ousac-black hover:text-ousac-blue group hidden items-center gap-2 text-sm font-bold transition-colors sm:flex"
             >
               {SITE_CONTENT.speakers.link}{' '}
@@ -253,7 +253,7 @@ export default function Home() {
           {/* Mobile "View All" Link */}
           <div className="mt-8 text-center sm:hidden">
             <Link
-              href="/speakers"
+              href="/conference/speakers"
               className="text-ousac-black inline-flex items-center text-sm font-bold"
             >
               View All <ChevronRight className="ml-1 h-4 w-4" />

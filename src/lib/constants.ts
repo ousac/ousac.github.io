@@ -12,8 +12,7 @@ import { ScheduleItem, Speaker, Sponsor, MemberClub } from '@/types/types';
 // These point to the Google Forms used for the data collection.
 export const GOOGLE_FORM_REGISTRATION =
   'https://docs.google.com/forms/d/e/1FAIpQLSfHvBEd57RvGRmxztjD1M2PZwhWuNZsap0N4w2VJgPBGA3Sgg/viewform';
-export const GOOGLE_FORM_ABSTRACT =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfHvBEd57RvGRmxztjD1M2PZwhWuNZsap0N4w2VJgPBGA3Sgg/viewform';
+export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 export const SITE_CONTENT = {
   navbar: {
@@ -26,8 +25,8 @@ export const SITE_CONTENT = {
     headlineSuffix: 'Game Changing.',
     subtext:
       'The 2nd Annual Ontario Universities Sports Analytics Conference. Where academic rigor meets professional application.',
-    ctaMain: 'Get Tickets',
-    ctaSecondary: 'View Agenda',
+    ctaMain: 'Register',
+    ctaSecondary: 'View Schedule',
     date: 'March 14, 2026',
     location: 'University of Toronto',
     statsTitle: 'Live Data Challenges',
@@ -68,6 +67,7 @@ export const SPEAKERS: Speaker[] = [
     bio: 'Leads predictive modelling products focusing on pro players and player evaluation. Driven by evolving analytical frameworks to quantify decisions at the highest level.',
     imagePath: '/img/liam_stevenson.jpeg',
     companyLogo: '/img/toronto_bluejays_logo.png',
+    category: 'Keynote',
     isKeynote: true,
     socials: {
       linkedin: 'https://www.linkedin.com/in/liam-stevenson-9b753483/',
@@ -82,6 +82,7 @@ export const SPEAKERS: Speaker[] = [
     bio: 'Leads the Sport Performance Lab at MLSE, working closely with teams on strategic research in sports analytics and player performance.',
     imagePath: '/img/ousac_logo.png',
     companyLogo: '/img/mlse_logo.png',
+    category: 'Keynote',
     isKeynote: true,
     socials: { linkedin: 'https://www.linkedin.com/in/dpleuler/' },
   },
@@ -94,10 +95,11 @@ export const SPEAKERS: Speaker[] = [
     bio: 'Ph.D. physicist with 20 years in solar astrophysics now applying automated tracking methods to measure player skills in live-game settings.',
     imagePath: '/img/meredith_willis.jpeg',
     companyLogo: '/img/smt_logo.webp',
+    category: 'Keynote',
     isKeynote: true,
     socials: {
       linkedin: 'https://www.linkedin.com/in/meredith-wills-0536765b',
-    }, // Inferred link or placeholder if not provided, user just gave text. I'll search or leave generic if unsure. User didn't give link for Meredith, just said "her iamge is in public img". Wait, I should double check user prompt. User provided "Meredith Wills ... Data Scientist ... SMT". No LinkedIn link provided in the copy-paste block, but I can infer or leave empty. I will leave empty to be safe or just use # if not found. actually I can probably find it or just leave it.
+    },
   },
   {
     id: 'p1',
@@ -107,6 +109,7 @@ export const SPEAKERS: Speaker[] = [
     organization: 'University of Waterloo',
     bio: 'Leader in sports analytics education and co-founder of UWAGGS.',
     imagePath: '/img/ousac_logo.png',
+    category: 'Featured',
     isKeynote: false,
     socials: {},
   },
@@ -118,6 +121,7 @@ export const SPEAKERS: Speaker[] = [
     organization: 'Canada Basketball',
     bio: 'Performance Analyst for Canada Basketball.',
     imagePath: '/img/ousac_logo.png',
+    category: 'Featured',
     isKeynote: false,
     socials: {},
   },
@@ -129,6 +133,7 @@ export const SPEAKERS: Speaker[] = [
     organization: 'York University',
     bio: 'Principal Investigator for the CANSSI Collaborative Research Team in Sports Analytics.',
     imagePath: '/img/ousac_logo.png',
+    category: 'Featured',
     isKeynote: false,
     socials: {},
   },
@@ -140,6 +145,7 @@ export const SPEAKERS: Speaker[] = [
     organization: 'Zelus Analytics',
     bio: 'Specializes in spatiotemporal tracking data and Bayesian models in hockey.',
     imagePath: '/img/ousac_logo.png',
+    category: 'Featured',
     isKeynote: false,
     socials: {},
   },
@@ -151,6 +157,7 @@ export const SPEAKERS: Speaker[] = [
     organization: 'Canada Basketball Competition',
     bio: 'Presentation of the winning submission for the Canada Basketball Data Challenge.',
     imagePath: '/img/ousac_logo.png',
+    category: 'Student',
     isKeynote: false,
     socials: {},
   },
@@ -465,7 +472,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm1',
     name: 'UTSPAN',
     university: 'University of Toronto',
-    logoPath: '/img/utspan_logo.webp',
+    logoPath: '/img/universities/university_of_toronto.png',
     description: 'U of T Sports Analytics Student Group.',
     linktreeUrl: 'https://linktr.ee/utspan',
   },
@@ -473,7 +480,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm2',
     name: 'UWAGGS',
     university: 'University of Waterloo',
-    logoPath: '/img/uwaggs_logo.webp',
+    logoPath: '/img/universities/university_of_waterloo.avif',
     description:
       'University of Waterloo Analytics Group for Games and Sports. Established 2023.',
     linktreeUrl: 'https://linktr.ee/uwaggs',
@@ -482,7 +489,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm3',
     name: 'QSAA',
     university: "Queen's University",
-    logoPath: '/img/qsao_logo.webp',
+    logoPath: '/img/universities/queens_university.png',
     description: "Queen's Sports Analytics Organization.",
     linktreeUrl: 'https://linktr.ee/qsaoqueens2023',
   },
@@ -490,7 +497,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm4',
     name: 'Western Sports Analytics',
     university: 'Western University',
-    logoPath: '/img/western_logo.webp',
+    logoPath: '/img/universities/western_university.png',
     description: 'Western Sports Analytics Club.',
     linktreeUrl: 'https://linktr.ee/wsac',
   },
@@ -498,7 +505,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm5',
     name: 'York Sports Analytics',
     university: 'York University',
-    logoPath: '/img/ysac_logo.webp', // Assuming image name from folder listing
+    logoPath: '/img/universities/york_university.png',
     description: 'York Sports Analytics Club.',
     linktreeUrl: 'https://linktr.ee/yorkusac',
   },

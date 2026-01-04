@@ -19,6 +19,7 @@ export interface Speaker {
   bio: string;
   imagePath: string; // URL or local path to the speaker's headshot
   companyLogo?: string; // Optional logo of their organization
+  category: 'Keynote' | 'Featured' | 'Student'; // Categorization for display
   isKeynote: boolean; // Determines if they appear in the Home page carousel
   socials: {
     linkedin?: string;

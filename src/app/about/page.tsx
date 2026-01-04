@@ -9,7 +9,7 @@ export default function About() {
             About OUSAC
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Established in 2025, the Ontario Universities Sports Analytics
+            Established in 2024, the Ontario Universities Sports Analytics
             Coalition (OUSAC) is a consortium of sports analytics clubs from
             post-secondary institutions across Ontario.
           </p>

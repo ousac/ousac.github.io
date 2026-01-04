@@ -52,7 +52,7 @@ export default function Schedule() {
                 item.type !== 'Networking' &&
                 setSelectedSession(item)
               }
-              className={`group flex flex-col gap-4 rounded-2xl border p-4 transition-all duration-300 md:flex-row md:gap-6 md:p-6 ${
+              className={`group flex flex-col gap-3 rounded-2xl border p-3 transition-all duration-300 md:flex-row md:gap-6 md:p-6 ${
                 item.type === 'Break' || item.type === 'Networking'
                   ? 'cursor-default border-transparent bg-gray-50'
                   : 'hover:border-ousac-purple/20 hover:shadow-card cursor-pointer border-gray-100 bg-white'
@@ -105,7 +105,7 @@ export default function Schedule() {
 
                 {/* Inline Speakers (Small Avatars) */}
                 {item.speakerIds.length > 0 && (
-                  <div className="mt-4 flex items-center gap-3 border-t border-gray-100 pt-4">
+                  <div className="mt-4 grid grid-cols-2 gap-3 border-t border-gray-100 pt-4 md:flex md:items-center">
                     {getSpeakerDetails(item.speakerIds).map((s) => (
                       <div
                         key={s?.id}

@@ -15,10 +15,10 @@ import { SITE_CONTENT } from '@/lib/constants';
  */
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-ousac-blue pt-8 pb-8 text-white">
+    <footer className="bg-ousac-blue py-6 text-white md:py-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Main Footer Content Grid */}
-        <div className="mb-8 grid gap-12 border-b border-gray-800 pb-8 md:grid-cols-4">
+        <div className="mb-6 grid gap-8 border-b border-gray-800 pb-6 md:mb-8 md:grid-cols-4 md:gap-12 md:pb-8">
           {/* Brand & Mission Statement */}
           <div className="col-span-1 md:col-span-2">
             <span className="font-display mb-6 block text-2xl font-bold tracking-tight">
@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
             </span>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400">
               The central hub for sports analytics research in Ontario.
-              Connecting students from U of T, Waterloo, Queen&apos;s, and York
-              with professional industry leaders.
+              Connecting students from across the province with professional
+              industry leaders.
             </p>
           </div>
 

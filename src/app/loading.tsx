@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
   return (
-    <div className="flex min-h-[50vh] w-full flex-col items-center justify-center bg-white dark:bg-black">
+    <div className="flex min-h-[50vh] w-full flex-col items-center justify-center bg-white">
       <div className="loading">
         <svg width="64px" height="48px">
           <polyline
