@@ -345,7 +345,7 @@ export const NavbarLogo = ({ className }: NavbarLogoProps) => {
           className
         )}
       >
-        <span className="md:hidden lg:inline">OUSAC 2026</span>
+        <span className="md:hidden lg:inline">OUSAC</span>
         <span className="hidden md:inline lg:hidden">OUSAC</span>
       </span>
     </motion.a>

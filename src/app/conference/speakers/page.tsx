@@ -2,11 +2,14 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { SPEAKERS } from '@/lib/constants';
+import { SPEAKERS, SHOW_SPEAKERS } from '@/lib/constants';
 import { Linkedin, Twitter, Globe, ChevronDown, ChevronUp } from 'lucide-react';
 import { Speaker } from '@/types/types';
 
+// ... SpeakerCard and Section components ...
+
 const SpeakerCard = ({ speaker }: { speaker: Speaker }) => (
+  // ... existing code ...
   <div className="group flex flex-col">
     {/* Image Container - Aspect Ratio 4:5 */}
     <div className="relative mb-6 aspect-square overflow-hidden rounded-sm bg-gray-100 md:aspect-[4/5]">
@@ -73,14 +76,16 @@ const Section = ({
   title,
   speakers,
   defaultOpen = true,
+  isComingSoon = false,
 }: {
   title: string;
   speakers: Speaker[];
   defaultOpen?: boolean;
+  isComingSoon?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  if (speakers.length === 0) return null;
+  if (!isComingSoon && speakers.length === 0) return null;
 
   return (
     <div className="mb-12 border-b border-gray-200 pb-12 last:border-0">
@@ -106,11 +111,21 @@ const Section = ({
         }`}
       >
         <div className="overflow-hidden">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 pt-8 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
-            {speakers.map((speaker) => (
-              <SpeakerCard key={speaker.id} speaker={speaker} />
-            ))}
-          </div>
+          {isComingSoon ? (
+            <div className="py-8">
+              <div className="inline-block rounded-lg border border-gray-100 bg-gray-50 px-6 py-3">
+                <span className="text-ousac-blue text-sm font-bold tracking-widest uppercase">
+                  Coming Soon
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-x-8 gap-y-12 pt-8 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
+              {speakers.map((speaker) => (
+                <SpeakerCard key={speaker.id} speaker={speaker} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -136,14 +151,20 @@ export default function Speakers() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6">
-        <Section title="Keynote Speakers" speakers={keynoteSpeakers} />
+        <Section
+          title="Keynote Speakers"
+          speakers={keynoteSpeakers}
+          isComingSoon={!SHOW_SPEAKERS}
+        />
         <Section
           title="Featured Speakers & Panelists"
           speakers={featuredSpeakers}
+          isComingSoon={!SHOW_SPEAKERS}
         />
         <Section
-          title="Student Competition Winners"
+          title="Student Presenters"
           speakers={studentSpeakers}
+          isComingSoon={!SHOW_SPEAKERS}
         />
       </div>
     </div>

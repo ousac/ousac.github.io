@@ -16,7 +16,7 @@ const leagueSpartan = League_Spartan({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ousac.ca'),
-  title: 'OUSAC 2026 | Ontario Universities Sports Analytics Conference',
+  title: 'OUSAC | Ontario Universities Sports Analytics Coalition',
   description:
     'Join us for the premier student-run sports analytics conference in Ontario. Featuring keynote speakers from pro sports, research presentations, and the annual Data Challenge.',
   keywords: [
@@ -40,19 +40,19 @@ export const metadata: Metadata = {
     title: 'OUSAC 2026 | Ontario Universities Sports Analytics Conference',
     description:
       'The central hub for sports analytics research in Ontario. Connecting students with industry leaders.',
-    siteName: 'OUSAC 2026',
+    siteName: 'OUSAC',
     images: [
       {
         url: '/img/ousac_logo.png',
         width: 1200,
         height: 630,
-        alt: 'OUSAC 2026 Logo',
+        alt: 'OUSAC Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OUSAC 2026',
+    title: 'OUSAC',
     description:
       'The premier student-run sports analytics conference in Ontario.',
     images: ['/img/ousac_logo.png'],

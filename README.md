@@ -1,4 +1,4 @@
-# OUSAC 2026 Website
+# OUSAC Website
 
 The official website for the 2nd Annual Ontario Universities Sports Analytics Conference (OUSAC), hosted at the University of Toronto.
 

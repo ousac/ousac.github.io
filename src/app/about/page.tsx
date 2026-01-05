@@ -64,7 +64,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Section Header */}
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <span className="text-ousac-purple mb-2 block text-xs font-bold uppercase tracking-widest">
+            <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
               Registration
             </span>
             <h2 className="font-display text-ousac-black mb-4 text-4xl font-bold sm:text-5xl">
@@ -87,25 +87,25 @@ export default function About() {
               <div className="grid gap-6 md:grid-cols-2">
                 {/* Regular Price */}
                 <div className="rounded-xl bg-gray-50 p-6">
-                  <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                     Regular Ticket
                   </p>
-                  <p className="text-4xl font-bold text-ousac-blue">
+                  <p className="text-ousac-blue text-4xl font-bold">
                     $10 <span className="text-lg text-gray-500">CAD</span>
                   </p>
                 </div>
 
                 {/* Student Price */}
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-ousac-gold/10 to-ousac-gold/5 p-6">
-                  <div className="absolute top-2 right-2 rounded-full bg-ousac-gold px-3 py-1">
-                    <span className="text-xs font-bold uppercase text-white">
+                <div className="from-ousac-gold/10 to-ousac-gold/5 relative overflow-hidden rounded-xl bg-gradient-to-br p-6">
+                  <div className="bg-ousac-gold absolute top-2 right-2 rounded-full px-3 py-1">
+                    <span className="text-xs font-bold text-white uppercase">
                       Student
                     </span>
                   </div>
-                  <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                     Student Ticket
                   </p>
-                  <p className="text-4xl font-bold text-ousac-blue">
+                  <p className="text-ousac-blue text-4xl font-bold">
                     $5 <span className="text-lg text-gray-500">CAD</span>
                   </p>
                 </div>
@@ -114,7 +114,7 @@ export default function About() {
 
             {/* Features List */}
             <div className="mb-8">
-              <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500">
+              <p className="mb-4 text-center text-sm font-semibold tracking-wider text-gray-500 uppercase">
                 All tickets include
               </p>
               <ul className="grid gap-3 md:grid-cols-2">
@@ -147,7 +147,7 @@ export default function About() {
             <div className="text-center">
               <a
                 href={STRIPE_PAYMENT_LINKS.regularTicket}
-                className="inline-block w-full rounded-lg bg-ousac-blue px-12 py-4 text-lg font-bold uppercase tracking-wider text-white transition-all hover:bg-ousac-blue/90 hover:shadow-lg md:w-auto"
+                className="bg-ousac-blue hover:bg-ousac-blue/90 inline-block w-full rounded-lg px-12 py-4 text-lg font-bold tracking-wider text-white uppercase transition-all hover:shadow-lg md:w-auto"
               >
                 Get Tickets
               </a>

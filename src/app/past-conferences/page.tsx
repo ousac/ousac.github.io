@@ -45,7 +45,7 @@ export default function PastConferences() {
           Legacy
         </span>
         <h1 className="font-display mb-6 text-4xl font-bold text-gray-900 md:text-6xl">
-          Conference Archive
+          Past Conferences
         </h1>
         <p className="mx-auto max-w-2xl text-xl font-light text-gray-500">
           Relive the moments that defined sports analytics in Ontario.
@@ -81,15 +81,13 @@ export default function PastConferences() {
                     </h2>
                   </div>
                   <div className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl">
-                    <div className="border-b border-gray-100 bg-gray-50/50 p-6">
-                      <h3 className="font-bold text-gray-900">
+                    <div className="border-b border-gray-100 p-6">
+                      <h3 className="mb-2 font-bold text-gray-900">
                         Official Program
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="mb-4 text-sm text-gray-500">
                         The complete guide to OUSAC 2025.
                       </p>
-                    </div>
-                    <div className="p-6">
                       <a
                         href="https://drive.google.com/file/d/1Ly_fY27VlvTwNQ9AoSI0MTQBW80NR_XY/view"
                         target="_blank"
@@ -97,7 +95,27 @@ export default function PastConferences() {
                         className="group/btn flex items-center justify-between rounded-xl border border-gray-200 p-4 transition-all hover:border-purple-200 hover:bg-purple-50"
                       >
                         <span className="text-sm font-semibold text-gray-700 group-hover/btn:text-purple-700">
-                          Download PDF
+                          View Program
+                        </span>
+                        <Download className="h-4 w-4 text-gray-400 transition-transform group-hover/btn:scale-110 group-hover/btn:text-purple-500" />
+                      </a>
+                    </div>
+
+                    <div className="p-6">
+                      <h3 className="mb-2 font-bold text-gray-900">
+                        Official Brochure
+                      </h3>
+                      <p className="mb-4 text-sm text-gray-500">
+                        Learn about OUSAC 2025 sponsorship and details.
+                      </p>
+                      <a
+                        href="https://drive.google.com/file/d/1pNafDUeILhEvajes3jKV0u-LwZgvrccy/view"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn flex items-center justify-between rounded-xl border border-gray-200 p-4 transition-all hover:border-purple-200 hover:bg-purple-50"
+                      >
+                        <span className="text-sm font-semibold text-gray-700 group-hover/btn:text-purple-700">
+                          View Brochure
                         </span>
                         <Download className="h-4 w-4 text-gray-400 transition-transform group-hover/btn:scale-110 group-hover/btn:text-purple-500" />
                       </a>
@@ -176,7 +194,7 @@ export default function PastConferences() {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-6 right-6 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            className="absolute top-6 right-6 z-50 rounded-full bg-white/10 p-4 text-white transition-colors hover:bg-white/20"
             onClick={() => setSelectedImage(null)}
           >
             <X className="h-8 w-8" />

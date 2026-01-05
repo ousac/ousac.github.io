@@ -18,7 +18,7 @@ export default function CallForPapers() {
             Call for Papers
           </h1>
           <p className="text-lg text-purple-100">
-            Present your research at OUSAC 2026.
+            Present your research at OUSAC.
           </p>
         </div>
       </div>
