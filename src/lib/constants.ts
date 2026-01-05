@@ -14,6 +14,48 @@ export const GOOGLE_FORM_REGISTRATION =
   'https://docs.google.com/forms/d/e/1FAIpQLSfHvBEd57RvGRmxztjD1M2PZwhWuNZsap0N4w2VJgPBGA3Sgg/viewform';
 export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
+// Stripe Payment Links (created in Stripe Dashboard)
+export const STRIPE_PAYMENT_LINKS = {
+  regularTicket: 'https://buy.stripe.com/test_fZueVe4Nffp5cwe8zR9Ve00',
+  studentTicket: 'https://buy.stripe.com/test_fZueVe4Nffp5cwe8zR9Ve00', // Same link - customers choose ticket type at checkout
+};
+
+export const TICKET_CONTENT = {
+  section: {
+    title: 'Get Your Ticket',
+    subtitle: 'Join us for an unforgettable day of sports analytics',
+    description:
+      'Secure your spot at OUSAC 2026. All tickets include full access to keynote presentations, panel discussions, student competitions, networking opportunities, and catered lunch.',
+  },
+  regularTicket: {
+    name: 'Regular Ticket',
+    price: '$10',
+    features: [
+      'Full conference access',
+      'Keynote presentations from industry leaders',
+      'Panel discussions and Q&A sessions',
+      'Student research presentations',
+      'Networking opportunities',
+      'Catered lunch included',
+    ],
+  },
+  studentTicket: {
+    name: 'Student Ticket',
+    price: '$5',
+    badge: 'Student Discount',
+    features: [
+      'Full conference access',
+      'Keynote presentations from industry leaders',
+      'Panel discussions and Q&A sessions',
+      'Student research presentations',
+      'Networking opportunities',
+      'Catered lunch included',
+    ],
+    honorSystemNote:
+      'This ticket operates on an honor system. No student verification required.',
+  },
+};
+
 export const SITE_CONTENT = {
   navbar: {
     title: 'OUSAC 2026',
