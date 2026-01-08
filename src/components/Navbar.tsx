@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   const MAIN_NAV_ITEMS = [
     { label: 'About', href: '/about' },
     { label: 'Members', href: '/members' },
-    { label: 'Tickets', href: '/about#tickets' },
+    { label: 'Register', href: '/register' },
   ];
 
   return (

@@ -16,8 +16,8 @@ export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Stripe Payment Links (created in Stripe Dashboard)
 export const STRIPE_PAYMENT_LINKS = {
-  regularTicket: 'https://buy.stripe.com/test_fZueVe4Nffp5cwe8zR9Ve00',
-  studentTicket: 'https://buy.stripe.com/test_fZueVe4Nffp5cwe8zR9Ve00', // Same link - customers choose ticket type at checkout
+  regularTicket: 'https://buy.stripe.com/fZueVe4Nffp5cwe8zR9Ve00',
+  studentTicket: 'https://buy.stripe.com/14A7sM5Rj5OvdAi2bt9Ve01',
 };
 
 export const TICKET_CONTENT = {
