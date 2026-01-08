@@ -18,6 +18,7 @@ export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 export const STRIPE_PAYMENT_LINKS = {
   regularTicket: 'https://buy.stripe.com/fZueVe4Nffp5cwe8zR9Ve00',
   studentTicket: 'https://buy.stripe.com/14A7sM5Rj5OvdAi2bt9Ve01',
+  virtualTicket: 'https://buy.stripe.com/28EdRa6Vnel10Nw5nF9Ve02',
 };
 
 export const TICKET_CONTENT = {
@@ -25,12 +26,13 @@ export const TICKET_CONTENT = {
     title: 'Get Your Ticket',
     subtitle: 'Join us for an unforgettable day of sports analytics',
     description:
-      'Secure your spot at OUSAC 2026. All tickets include full access to keynote presentations, panel discussions, student competitions, networking opportunities, and catered lunch.',
+      'Secure your spot at OUSAC 2026. Choose between in-person attendance or virtual streaming. In-person tickets include catered lunch and networking opportunities.',
   },
   regularTicket: {
-    name: 'Regular Ticket',
+    name: 'In-Person - Professional',
     price: '$10',
     features: [
+      'In-person attendance at UofT',
       'Full conference access',
       'Keynote presentations from industry leaders',
       'Panel discussions and Q&A sessions',
@@ -40,10 +42,11 @@ export const TICKET_CONTENT = {
     ],
   },
   studentTicket: {
-    name: 'Student Ticket',
+    name: 'In-Person - Student',
     price: '$5',
     badge: 'Student Discount',
     features: [
+      'In-person attendance at UofT',
       'Full conference access',
       'Keynote presentations from industry leaders',
       'Panel discussions and Q&A sessions',
@@ -53,6 +56,19 @@ export const TICKET_CONTENT = {
     ],
     honorSystemNote:
       'This ticket operates on an honor system. No student verification required.',
+  },
+  virtualTicket: {
+    name: 'Virtual Attendance',
+    price: 'Free',
+    badge: 'Remote',
+    features: [
+      'Live stream access to all keynotes',
+      'Live stream of panel discussions',
+      'Access to student presentations',
+      'Q&A participation via chat',
+      'Digital conference materials',
+    ],
+    note: 'Virtual ticket does not grant in-person entry. You must purchase an in-person ticket to attend physically.',
   },
 };
 

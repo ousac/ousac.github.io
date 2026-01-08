@@ -1,4 +1,3 @@
-import React from 'react';
 import { TICKET_CONTENT, STRIPE_PAYMENT_LINKS } from '@/lib/constants';
 import type { Metadata } from 'next';
 
@@ -52,21 +51,21 @@ export default function Register() {
         </div>
 
         {/* Ticket Selection Section */}
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-7xl">
           <h2 className="font-display mb-8 text-center text-3xl font-bold text-gray-900">
             Select Your Ticket
           </h2>
 
           {/* Ticket Cards Grid */}
-          <div className="mb-12 grid gap-8 md:grid-cols-2">
+          <div className="mb-12 grid gap-8 md:grid-cols-3">
             {/* Professional Ticket Card */}
             <div className="overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:border-ousac-blue hover:shadow-xl">
               <div className="bg-gray-50 p-6 text-center">
                 <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  Professional Ticket
+                  {TICKET_CONTENT.regularTicket.name}
                 </p>
                 <p className="text-5xl font-bold text-ousac-blue">
-                  $10 <span className="text-lg text-gray-500">CAD</span>
+                  {TICKET_CONTENT.regularTicket.price} <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
               <div className="p-6">
@@ -107,15 +106,15 @@ export default function Register() {
             <div className="relative overflow-hidden rounded-2xl border-2 border-ousac-gold bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
               <div className="absolute top-4 right-4 z-10 rounded-full bg-ousac-gold px-4 py-1.5">
                 <span className="text-xs font-bold uppercase text-white">
-                  50% Off
+                  {TICKET_CONTENT.studentTicket.badge}
                 </span>
               </div>
               <div className="bg-gradient-to-br from-ousac-gold/10 to-ousac-gold/5 p-6 text-center">
                 <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  Student Ticket
+                  {TICKET_CONTENT.studentTicket.name}
                 </p>
                 <p className="text-5xl font-bold text-ousac-blue">
-                  $5 <span className="text-lg text-gray-500">CAD</span>
+                  {TICKET_CONTENT.studentTicket.price} <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
               <div className="p-6">
@@ -148,6 +147,62 @@ export default function Register() {
                   className="block w-full rounded-lg bg-ousac-blue py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-ousac-blue/90 hover:shadow-md"
                 >
                   Register as Student
+                </a>
+              </div>
+            </div>
+
+            {/* Virtual Ticket Card */}
+            <div className="relative overflow-hidden rounded-2xl border-2 border-green-500 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="absolute top-4 right-4 z-10 rounded-full bg-green-500 px-4 py-1.5">
+                <span className="text-xs font-bold uppercase text-white">
+                  {TICKET_CONTENT.virtualTicket.badge}
+                </span>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 text-center">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                  {TICKET_CONTENT.virtualTicket.name}
+                </p>
+                <p className="text-5xl font-bold text-ousac-blue">
+                  {TICKET_CONTENT.virtualTicket.price}
+                </p>
+              </div>
+              <div className="p-6">
+                <ul className="mb-6 space-y-3">
+                  {TICKET_CONTENT.virtualTicket.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="mt-0.5 flex-shrink-0">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
+                          <svg
+                            className="h-3 w-3 text-green-600"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                {TICKET_CONTENT.virtualTicket.note && (
+                  <div className="mb-4 rounded-lg bg-yellow-50 p-3">
+                    <p className="text-xs text-yellow-800">
+                      ⚠️ {TICKET_CONTENT.virtualTicket.note}
+                    </p>
+                  </div>
+                )}
+                <a
+                  href={STRIPE_PAYMENT_LINKS.virtualTicket}
+                  className="block w-full rounded-lg bg-green-600 py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-green-700 hover:shadow-md"
+                >
+                  Register for Virtual
                 </a>
               </div>
             </div>
