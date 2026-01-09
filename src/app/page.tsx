@@ -8,6 +8,7 @@ import {
   SPEAKERS,
   SITE_CONTENT,
   MEMBER_CLUBS,
+  SHOW_SPEAKERS,
 } from '@/lib/constants';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
 
@@ -163,103 +164,109 @@ export default function Home() {
       </section>
 
       {/* Featured Speakers Preview (Carousel) */}
-      <section className="border-t border-gray-100 bg-white px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 flex items-end justify-between">
-            <div>
-              <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
-                {SITE_CONTENT.speakers.label}
-              </span>
-              <h2 className="font-display text-ousac-black text-4xl font-bold">
-                {SITE_CONTENT.speakers.title}
-              </h2>
-            </div>
-            <Link
-              href="/conference/speakers"
-              className="text-ousac-black hover:text-ousac-blue group hidden items-center gap-2 text-sm font-bold transition-colors sm:flex"
-            >
-              {SITE_CONTENT.speakers.link}{' '}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <div className="shadow-card animate-fade-in-up grid gap-0 overflow-hidden rounded-2xl border border-gray-100 lg:grid-cols-2">
-            {/* Carousel Image Side */}
-            <div className="relative h-[400px] overflow-hidden bg-gray-200 lg:h-auto">
-              <Image
-                key={currentSpeakerIndex}
-                src={keynoteSpeakers[currentSpeakerIndex].imagePath}
-                alt="Speaker"
-                fill
-                className="animate-fade-in object-cover"
-              />
-              <div className="absolute top-6 left-6 z-10">
-                <span className="text-ousac-black rounded bg-white/90 px-3 py-1 text-[10px] font-bold tracking-wider uppercase shadow-sm backdrop-blur">
-                  Keynote
+      {SHOW_SPEAKERS && (
+        <section className="border-t border-gray-100 bg-white px-6 py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 flex items-end justify-between">
+              <div>
+                <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
+                  {SITE_CONTENT.speakers.label}
                 </span>
+                <h2 className="font-display text-ousac-black text-4xl font-bold">
+                  {SITE_CONTENT.speakers.title}
+                </h2>
               </div>
+              <Link
+                href="/conference/speakers"
+                className="text-ousac-black hover:text-ousac-blue group hidden items-center gap-2 text-sm font-bold transition-colors sm:flex"
+              >
+                {SITE_CONTENT.speakers.link}{' '}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
 
-            {/* Carousel Content Side */}
-            <div className="relative flex flex-col justify-center bg-white p-10 lg:p-16">
-              <div className="flex-grow">
-                <div className="mb-6 flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-display text-ousac-black animate-fade-in mb-2 text-3xl font-bold md:text-4xl">
-                      {keynoteSpeakers[currentSpeakerIndex].firstName}{' '}
-                      {keynoteSpeakers[currentSpeakerIndex].lastName}
-                    </h3>
-                    <p className="text-ousac-blue animate-fade-in text-lg font-medium delay-100">
-                      {keynoteSpeakers[currentSpeakerIndex].role},{' '}
-                      {keynoteSpeakers[currentSpeakerIndex].organization}
-                    </p>
+            <div className="shadow-card animate-fade-in-up grid gap-0 overflow-hidden rounded-2xl border border-gray-100 lg:grid-cols-2">
+              {/* Carousel Image Side */}
+              <div className="relative h-[400px] overflow-hidden bg-gray-200 lg:h-auto">
+                <Image
+                  key={currentSpeakerIndex}
+                  src={keynoteSpeakers[currentSpeakerIndex].imagePath}
+                  alt="Speaker"
+                  fill
+                  className="animate-fade-in object-cover"
+                />
+                <div className="absolute top-6 left-6 z-10">
+                  <span className="text-ousac-black rounded bg-white/90 px-3 py-1 text-[10px] font-bold tracking-wider uppercase shadow-sm backdrop-blur">
+                    Keynote
+                  </span>
+                </div>
+              </div>
+
+              {/* Carousel Content Side */}
+              <div className="relative flex flex-col justify-center bg-white p-10 lg:p-16">
+                <div className="flex-grow">
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-display text-ousac-black animate-fade-in mb-2 text-3xl font-bold md:text-4xl">
+                        {keynoteSpeakers[currentSpeakerIndex].firstName}{' '}
+                        {keynoteSpeakers[currentSpeakerIndex].lastName}
+                      </h3>
+                      <p className="text-ousac-blue animate-fade-in text-lg font-medium delay-100">
+                        {keynoteSpeakers[currentSpeakerIndex].role},{' '}
+                        {keynoteSpeakers[currentSpeakerIndex].organization}
+                      </p>
+                    </div>
+
+                    {keynoteSpeakers[currentSpeakerIndex].companyLogo && (
+                      <div className="relative h-16 w-16 flex-shrink-0 rounded-lg bg-white p-2 shadow-sm md:h-20 md:w-20">
+                        <Image
+                          src={
+                            keynoteSpeakers[currentSpeakerIndex].companyLogo!
+                          }
+                          alt={
+                            keynoteSpeakers[currentSpeakerIndex].organization
+                          }
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    )}
                   </div>
 
-                  {keynoteSpeakers[currentSpeakerIndex].companyLogo && (
-                    <div className="relative h-16 w-16 flex-shrink-0 rounded-lg bg-white p-2 shadow-sm md:h-20 md:w-20">
-                      <Image
-                        src={keynoteSpeakers[currentSpeakerIndex].companyLogo!}
-                        alt={keynoteSpeakers[currentSpeakerIndex].organization}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
+                  <p className="animate-fade-in mb-8 leading-relaxed text-gray-500 delay-200">
+                    {keynoteSpeakers[currentSpeakerIndex].bio}
+                  </p>
                 </div>
 
-                <p className="animate-fade-in mb-8 leading-relaxed text-gray-500 delay-200">
-                  {keynoteSpeakers[currentSpeakerIndex].bio}
-                </p>
-              </div>
-
-              {/* Carousel Indicators */}
-              <div className="flex gap-2">
-                {keynoteSpeakers.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSpeakerIndex(idx)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      idx === currentSpeakerIndex
-                        ? 'bg-ousac-black w-12'
-                        : 'w-4 bg-gray-200 hover:bg-gray-300'
-                    }`}
-                  />
-                ))}
+                {/* Carousel Indicators */}
+                <div className="flex gap-2">
+                  {keynoteSpeakers.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSpeakerIndex(idx)}
+                      className={`h-1 rounded-full transition-all duration-300 ${
+                        idx === currentSpeakerIndex
+                          ? 'bg-ousac-black w-12'
+                          : 'w-4 bg-gray-200 hover:bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Mobile "View All" Link */}
-          <div className="mt-8 text-center sm:hidden">
-            <Link
-              href="/conference/speakers"
-              className="text-ousac-black inline-flex items-center text-sm font-bold"
-            >
-              View All <ChevronRight className="ml-1 h-4 w-4" />
-            </Link>
+            {/* Mobile "View All" Link */}
+            <div className="mt-8 text-center sm:hidden">
+              <Link
+                href="/conference/speakers"
+                className="text-ousac-black inline-flex items-center text-sm font-bold"
+              >
+                View All <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }

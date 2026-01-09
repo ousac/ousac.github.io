@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
             role="list"
             className="mt-4 list-disc space-y-2 pl-5 text-gray-600"
           >
-            <li>Facilitate your participation in OUSAC 2026</li>
+            <li>Facilitate your participation in OUSAC</li>
             <li>
               Communicate with you about event updates, schedules, and changes
             </li>

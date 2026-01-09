@@ -24,8 +24,7 @@ export default function PaymentSuccess() {
             Payment Successful!
           </h1>
           <p className="mb-12 text-xl text-gray-600">
-            Thank you for registering for OUSAC 2026. We're excited to see you
-            there!
+            Thank you for registering for OUSAC. We're excited to see you there!
           </p>
 
           {/* Confirmation Details Card */}
@@ -36,7 +35,7 @@ export default function PaymentSuccess() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-ousac-blue">
+                <div className="text-ousac-blue rounded-lg bg-blue-100 p-2">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
@@ -51,20 +50,20 @@ export default function PaymentSuccess() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-ousac-blue">
+                <div className="text-ousac-blue rounded-lg bg-blue-100 p-2">
                   <Calendar className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Save the Date</p>
                   <p className="text-sm text-gray-600">
-                    March 14, 2026 - Mark your calendar for an incredible day
-                    of sports analytics.
+                    March 14, 2026 - Mark your calendar for an incredible day of
+                    sports analytics.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-ousac-blue">
+                <div className="text-ousac-blue rounded-lg bg-blue-100 p-2">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -84,13 +83,13 @@ export default function PaymentSuccess() {
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/conference/schedule"
-              className="inline-flex items-center justify-center rounded-lg bg-ousac-blue px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-ousac-blue/90"
+              className="bg-ousac-blue hover:bg-ousac-blue/90 inline-flex items-center justify-center rounded-lg px-8 py-3 text-sm font-bold tracking-wider text-white uppercase transition-colors"
             >
               View Schedule
             </Link>
             <Link
               href="/conference/speakers"
-              className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold uppercase tracking-wider text-ousac-blue transition-colors hover:border-ousac-blue"
+              className="text-ousac-blue hover:border-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors"
             >
               Meet the Speakers
             </Link>

@@ -11,8 +11,12 @@ import { ScheduleItem, Speaker, Sponsor, MemberClub } from '@/types/types';
 // External Links
 // These point to the Google Forms used for the data collection.
 export const GOOGLE_FORM_REGISTRATION =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfHvBEd57RvGRmxztjD1M2PZwhWuNZsap0N4w2VJgPBGA3Sgg/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSdR2uE6_74yHkC7yT8GkZ7F4r2yP3vQZ5n6_q8m9t0y8u4w/viewform';
 export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
+
+// Feature Flags
+export const SHOW_SPEAKERS = false;
+export const SHOW_SPONSORS = false;
 
 // Stripe Payment Links (created in Stripe Dashboard)
 export const STRIPE_PAYMENT_LINKS = {
@@ -74,7 +78,7 @@ export const TICKET_CONTENT = {
 
 export const SITE_CONTENT = {
   navbar: {
-    title: 'OUSAC 2026',
+    title: 'OUSAC',
     logoAlt: 'OUSAC Logo',
   },
   hero: {
@@ -93,7 +97,7 @@ export const SITE_CONTENT = {
   },
   valueProp: {
     title: 'Bridging the Gap',
-    text: 'OUSAC 2026 unites the brightest student minds with industry leaders from the NHL, NBA, and top analytics firms. Experience invited talks, panels, and our signature data challenge showcase.',
+    text: 'OUSAC unites the brightest student minds with industry leaders from the NHL, NBA, and top analytics firms. Experience invited talks, panels, and our signature data challenge showcase.',
   },
   speakers: {
     label: 'Voices',
@@ -531,7 +535,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     name: 'UTSPAN',
     university: 'University of Toronto',
     logoPath: '/img/universities/university_of_toronto.png',
-    description: 'U of T Sports Analytics Student Group.',
+    description: 'University of Toronto Sports Analytics Student Group.',
     linktreeUrl: 'https://linktr.ee/utspan',
   },
   {
@@ -545,23 +549,23 @@ export const MEMBER_CLUBS: MemberClub[] = [
   },
   {
     id: 'm3',
-    name: 'QSAA',
+    name: 'QSAO',
     university: "Queen's University",
     logoPath: '/img/universities/queens_university.png',
-    description: "Queen's Sports Analytics Organization.",
+    description: "QSAO (Queen's Sports Analytics Organization).",
     linktreeUrl: 'https://linktr.ee/qsaoqueens2023',
   },
   {
     id: 'm4',
-    name: 'Western Sports Analytics',
-    university: 'Western University',
+    name: 'WSAC',
+    university: 'University of Western Ontario',
     logoPath: '/img/universities/western_university.png',
     description: 'Western Sports Analytics Club.',
     linktreeUrl: 'https://linktr.ee/wsac',
   },
   {
     id: 'm5',
-    name: 'York Sports Analytics',
+    name: 'YSAC',
     university: 'York University',
     logoPath: '/img/universities/york_university.png',
     description: 'York Sports Analytics Club.',

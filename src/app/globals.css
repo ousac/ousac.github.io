@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 
 /* 
-  OUSAC 2026 Theme Configuration
+  OUSAC Theme Configuration
   We're using Tailwind v4's @theme block to define our custom colors and animations.
 */
 @theme inline {

@@ -36,13 +36,13 @@ export function TicketCard({
       className={`relative overflow-hidden rounded-2xl border-2 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl ${
         isStudent
           ? 'border-ousac-gold'
-          : 'border-gray-200 hover:border-ousac-blue'
+          : 'hover:border-ousac-blue border-gray-200'
       }`}
     >
       {/* Badge */}
       {badge && (
-        <div className="absolute top-0 right-0 rounded-bl-2xl bg-ousac-gold px-4 py-2">
-          <span className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-white">
+        <div className="bg-ousac-gold absolute top-0 right-0 rounded-bl-2xl px-4 py-2">
+          <span className="flex items-center gap-1 text-xs font-bold tracking-wider text-white uppercase">
             <GraduationCap className="h-4 w-4" />
             {badge}
           </span>
@@ -56,7 +56,7 @@ export function TicketCard({
 
       {/* Price */}
       <div className="mb-6">
-        <span className="text-5xl font-bold text-ousac-blue">{price}</span>
+        <span className="text-ousac-blue text-5xl font-bold">{price}</span>
         <span className="ml-2 text-gray-500">CAD</span>
       </div>
 
@@ -82,7 +82,7 @@ export function TicketCard({
               type="checkbox"
               checked={agreedToHonorSystem}
               onChange={(e) => setAgreedToHonorSystem(e.target.checked)}
-              className="mt-1 h-4 w-4 cursor-pointer rounded border-gray-300 text-ousac-blue focus:ring-2 focus:ring-ousac-blue"
+              className="text-ousac-blue focus:ring-ousac-blue mt-1 h-4 w-4 cursor-pointer rounded border-gray-300 focus:ring-2"
             />
             <span className="text-xs text-gray-600">
               I confirm I am a student. {honorSystemNote}
@@ -95,10 +95,10 @@ export function TicketCard({
       <button
         onClick={handlePurchase}
         disabled={isStudent && !agreedToHonorSystem}
-        className={`w-full rounded-lg py-4 text-sm font-bold uppercase tracking-wider transition-all ${
+        className={`w-full rounded-lg py-4 text-sm font-bold tracking-wider uppercase transition-all ${
           isStudent && !agreedToHonorSystem
             ? 'cursor-not-allowed bg-gray-200 text-gray-400'
-            : 'bg-ousac-blue text-white hover:bg-ousac-blue/90 hover:shadow-md'
+            : 'bg-ousac-blue hover:bg-ousac-blue/90 text-white hover:shadow-md'
         }`}
       >
         {isStudent && !agreedToHonorSystem

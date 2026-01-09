@@ -47,17 +47,27 @@ export default function StudentCompetition() {
               <p className="mb-4">
                 Please fill out this form if you&apos;d like to provide a
                 13-minute in-person presentation on your sports analytics
-                research at the 2nd annual OUSAC Conference, taking place on
-                Saturday, March 14, 2026 at the University of Toronto. This
-                could include presenting on a submission from a past data
+                research at the 2nd annual OUSAC Conference, taking place on{' '}
+                <strong className="text-ousac-black">
+                  Saturday, March 14, 2026
+                </strong>{' '}
+                at the{' '}
+                <strong className="text-ousac-black">
+                  University of Toronto
+                </strong>
+                . This could include presenting on a submission from a past data
                 competition or another research project you may have worked on.
                 Outstanding presentations will be recognized at the conference.
               </p>
               <p>
-                Presentation slots are limited, and abstract submissions are due
-                February 13, 2026. Late submissions may not be evaluated. If
-                selected as a presenter, you will be contacted by February 19
-                with further details.
+                Presentation slots are limited, and abstract submissions are due{' '}
+                <strong className="text-red-600 underline decoration-red-300 underline-offset-4">
+                  February 13, 2026
+                </strong>
+                . Late submissions may not be evaluated. If selected as a
+                presenter, you will be contacted by{' '}
+                <strong className="text-ousac-black">February 19</strong> with
+                further details.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3">
@@ -94,6 +104,15 @@ export default function StudentCompetition() {
                     <BadgeCheck className="h-5 w-5" />
                   </div>
                   <span>
+                    <strong>Perks:</strong> Finalists will receive free
+                    admission to the conference.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full bg-indigo-100 p-1 text-indigo-600">
+                    <FileText className="h-5 w-5" />
+                  </div>
+                  <span>
                     <strong>Publication:</strong> Winning papers may be featured
                     on the OUSAC website and partner publications.
                   </span>
@@ -112,7 +131,7 @@ export default function StudentCompetition() {
               student bios and project summaries.
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {[1, 2, 3, 4].map((i) => (
+              {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
                   className="flex animate-pulse items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 opacity-60"

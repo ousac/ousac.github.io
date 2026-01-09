@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
 
   const MAIN_NAV_ITEMS = [
     { label: 'About', href: '/about' },
+    { label: 'Past Conferences', href: '/past-conferences' },
     { label: 'Members', href: '/members' },
     { label: 'Register', href: '/register' },
   ];

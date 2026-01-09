@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { SCHEDULE, SPEAKERS } from '@/lib/constants';
+import { SCHEDULE, SPEAKERS, SHOW_SPEAKERS } from '@/lib/constants';
 import { MapPin, X, ChevronRight } from 'lucide-react';
 import { ScheduleItem, Speaker } from '@/types/types';
 
@@ -35,7 +35,7 @@ export default function Schedule() {
       {/* Page Header */}
       <div className="animate-fade-in-up mx-auto mb-8 max-w-4xl px-6 text-center">
         <h1 className="font-display text-ousac-black mb-4 text-4xl font-bold md:text-5xl">
-          Agenda
+          Schedule
         </h1>
         <p className="text-gray-500">March 14, 2026 • University of Toronto</p>
       </div>
@@ -104,7 +104,7 @@ export default function Schedule() {
                 </div>
 
                 {/* Inline Speakers (Small Avatars) */}
-                {item.speakerIds.length > 0 && (
+                {SHOW_SPEAKERS && item.speakerIds.length > 0 && (
                   <div className="mt-4 grid grid-cols-2 gap-3 border-t border-gray-100 pt-4 md:flex md:items-center">
                     {getSpeakerDetails(item.speakerIds).map((s) => (
                       <div
@@ -195,7 +195,7 @@ export default function Schedule() {
               </div>
 
               {/* Full Speaker Details in Modal */}
-              {selectedSession.speakerIds.length > 0 && (
+              {SHOW_SPEAKERS && selectedSession.speakerIds.length > 0 && (
                 <div>
                   <h4 className="text-ousac-black mb-4 border-b border-gray-100 pb-2 text-xs font-bold tracking-widest uppercase">
                     Speakers
