@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, MapPin, ChevronRight } from 'lucide-react';
 import {
   SPEAKERS,
-  GOOGLE_FORM_REGISTRATION,
   SITE_CONTENT,
   MEMBER_CLUBS,
   SHOW_SPEAKERS,
@@ -77,7 +76,7 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col items-start gap-4 sm:flex-row">
-              <AnimatedShinyButton url={GOOGLE_FORM_REGISTRATION}>
+              <AnimatedShinyButton url="/register">
                 {SITE_CONTENT.hero.ctaMain}
               </AnimatedShinyButton>
               <Link

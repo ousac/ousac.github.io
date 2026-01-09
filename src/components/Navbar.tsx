@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
     { label: 'About', href: '/about' },
     { label: 'Past Conferences', href: '/past-conferences' },
     { label: 'Members', href: '/members' },
-    { label: 'Tickets', href: '/about#tickets' },
+    { label: 'Register', href: '/register' },
   ];
 
   return (
