@@ -138,7 +138,7 @@ export default function Home() {
                     className="relative h-24 w-24 opacity-80 grayscale transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 md:h-32 md:w-32"
                   >
                     <Image
-                      src={club.logoPath}
+                      src={club.universityLogo}
                       alt={club.name}
                       fill
                       className="object-contain"

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           {/* Brand & Mission Statement */}
           <div className="col-span-1 md:col-span-2">
             <span className="font-display mb-6 block text-2xl font-bold tracking-tight">
-              OUSAC 2026
+              OUSAC
             </span>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400">
               The central hub for sports analytics research in Ontario.
