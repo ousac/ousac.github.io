@@ -14,7 +14,6 @@ import {
   NavItems,
 } from '@/components/ui/motion-navbar';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
-import { GOOGLE_FORM_REGISTRATION } from '@/lib/constants';
 import { Calendar, Users, Handshake, MapPin, Trophy } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -34,7 +33,6 @@ const Navbar: React.FC = () => {
     { label: 'About', href: '/about' },
     { label: 'Past Conferences', href: '/past-conferences' },
     { label: 'Members', href: '/members' },
-    { label: 'Register', href: '/register' },
   ];
 
   return (
@@ -48,11 +46,7 @@ const Navbar: React.FC = () => {
               <NavDropdown label="Conference" items={CONFERENCE_ITEMS} />
               <NavItems items={MAIN_NAV_ITEMS} />
               <div className="ml-4">
-                <a
-                  href={GOOGLE_FORM_REGISTRATION}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="/register">
                   <AnimatedShinyButton className="rounded-full !px-6 !py-2">
                     Register
                   </AnimatedShinyButton>
@@ -101,12 +95,11 @@ const Navbar: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <AnimatedShinyButton
-                  url={GOOGLE_FORM_REGISTRATION}
-                  className="w-full justify-center rounded-full !px-8 !py-3"
-                >
-                  Register
-                </AnimatedShinyButton>
+                <a href="/register">
+                  <AnimatedShinyButton className="w-full justify-center rounded-full !px-8 !py-3">
+                    Register
+                  </AnimatedShinyButton>
+                </a>
               </div>
             </MobileNavMenu>
           </MobileNav>

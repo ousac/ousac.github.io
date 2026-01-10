@@ -13,7 +13,7 @@ export default function Register() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Page Header */}
         <div className="mx-auto mb-16 max-w-4xl text-center">
-          <span className="text-ousac-purple mb-2 block text-xs font-bold uppercase tracking-widest">
+          <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
             Registration
           </span>
           <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl">
@@ -59,13 +59,14 @@ export default function Register() {
           {/* Ticket Cards Grid */}
           <div className="mb-12 grid gap-8 md:grid-cols-3">
             {/* Professional Ticket Card */}
-            <div className="overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:border-ousac-blue hover:shadow-xl">
+            <div className="hover:border-ousac-blue overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
               <div className="bg-gray-50 p-6 text-center">
-                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.regularTicket.name}
                 </p>
-                <p className="text-5xl font-bold text-ousac-blue">
-                  {TICKET_CONTENT.regularTicket.price} <span className="text-lg text-gray-500">CAD</span>
+                <p className="text-ousac-blue text-5xl font-bold">
+                  {TICKET_CONTENT.regularTicket.price}{' '}
+                  <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
               <div className="p-6">
@@ -95,7 +96,7 @@ export default function Register() {
                 </ul>
                 <a
                   href={STRIPE_PAYMENT_LINKS.regularTicket}
-                  className="block w-full rounded-lg bg-ousac-blue py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-ousac-blue/90 hover:shadow-md"
+                  className="bg-ousac-blue hover:bg-ousac-blue/90 block w-full rounded-lg py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:shadow-md"
                 >
                   Register as Professional
                 </a>
@@ -103,18 +104,19 @@ export default function Register() {
             </div>
 
             {/* Student Ticket Card */}
-            <div className="relative overflow-hidden rounded-2xl border-2 border-ousac-gold bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-              <div className="absolute top-4 right-4 z-10 rounded-full bg-ousac-gold px-4 py-1.5">
-                <span className="text-xs font-bold uppercase text-white">
+            <div className="border-ousac-gold relative overflow-hidden rounded-2xl border-2 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="bg-ousac-gold absolute top-4 right-4 z-10 rounded-full px-4 py-1.5">
+                <span className="text-xs font-bold text-white uppercase">
                   {TICKET_CONTENT.studentTicket.badge}
                 </span>
               </div>
-              <div className="bg-gradient-to-br from-ousac-gold/10 to-ousac-gold/5 p-6 text-center">
-                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+              <div className="from-ousac-gold/10 to-ousac-gold/5 bg-gradient-to-br p-6 text-center">
+                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.studentTicket.name}
                 </p>
-                <p className="text-5xl font-bold text-ousac-blue">
-                  {TICKET_CONTENT.studentTicket.price} <span className="text-lg text-gray-500">CAD</span>
+                <p className="text-ousac-blue text-5xl font-bold">
+                  {TICKET_CONTENT.studentTicket.price}{' '}
+                  <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
               <div className="p-6">
@@ -144,7 +146,7 @@ export default function Register() {
                 </ul>
                 <a
                   href={STRIPE_PAYMENT_LINKS.studentTicket}
-                  className="block w-full rounded-lg bg-ousac-blue py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-ousac-blue/90 hover:shadow-md"
+                  className="bg-ousac-blue hover:bg-ousac-blue/90 block w-full rounded-lg py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:shadow-md"
                 >
                   Register as Student
                 </a>
@@ -154,15 +156,15 @@ export default function Register() {
             {/* Virtual Ticket Card */}
             <div className="relative overflow-hidden rounded-2xl border-2 border-green-500 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
               <div className="absolute top-4 right-4 z-10 rounded-full bg-green-500 px-4 py-1.5">
-                <span className="text-xs font-bold uppercase text-white">
+                <span className="text-xs font-bold text-white uppercase">
                   {TICKET_CONTENT.virtualTicket.badge}
                 </span>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 text-center">
-                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.virtualTicket.name}
                 </p>
-                <p className="text-5xl font-bold text-ousac-blue">
+                <p className="text-ousac-blue text-5xl font-bold">
                   {TICKET_CONTENT.virtualTicket.price}
                 </p>
               </div>
@@ -200,7 +202,7 @@ export default function Register() {
                 )}
                 <a
                   href={STRIPE_PAYMENT_LINKS.virtualTicket}
-                  className="block w-full rounded-lg bg-green-600 py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-green-700 hover:shadow-md"
+                  className="block w-full rounded-lg bg-green-600 py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:bg-green-700 hover:shadow-md"
                 >
                   Register for Virtual
                 </a>
@@ -211,9 +213,9 @@ export default function Register() {
           {/* Additional Information */}
           <div className="rounded-xl border border-blue-200 bg-white p-6 text-center">
             <p className="text-sm text-gray-600">
-              After clicking your ticket type, you'll be redirected to a secure
-              checkout page where you'll provide your information and complete
-              registration.
+              After clicking your ticket type, you&apos;ll be redirected to a
+              secure checkout page where you&apos;ll provide your information
+              and complete registration.
             </p>
           </div>
         </div>

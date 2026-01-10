@@ -9,9 +9,6 @@ import { ScheduleItem, Speaker, Sponsor, MemberClub } from '@/types/types';
  */
 
 // External Links
-// These point to the Google Forms used for the data collection.
-export const GOOGLE_FORM_REGISTRATION =
-  'https://docs.google.com/forms/d/e/1FAIpQLSdR2uE6_74yHkC7yT8GkZ7F4r2yP3vQZ5n6_q8m9t0y8u4w/viewform';
 export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Feature Flags
