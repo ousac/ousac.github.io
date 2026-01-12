@@ -94,7 +94,7 @@ export const SITE_CONTENT = {
   },
   valueProp: {
     title: 'Bridging the Gap',
-    text: 'OUSAC unites the brightest student minds with industry leaders from the NHL, NBA, and top analytics firms. Experience invited talks, panels, and our signature data challenge showcase.',
+    text: 'OUSAC unites the brightest student minds with industry leaders from the MLB, NHL, NBA, and top analytics firms. Experience invited talks, panels, and our signature data challenge showcase.',
   },
   speakers: {
     label: 'Voices',
