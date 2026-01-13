@@ -84,7 +84,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     >
       <nav
         className={cn(
-          'fixed top-0 right-0 left-0 z-50 px-4 py-4 md:px-6',
+          'fixed top-0 right-0 left-0 z-50 px-4 py-2 md:px-6 md:py-4',
           className
         )}
       >

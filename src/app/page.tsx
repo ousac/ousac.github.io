@@ -37,24 +37,40 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [keynoteSpeakers.length]);
 
+  // Logic to show/hide the Data Challenge promo based on date (Feb 28, 2026)
+  const [showChallenge, setShowChallenge] = useState(false);
+  useEffect(() => {
+    // Wrap in setTimeout to avoid synchronous state update warning
+    const timer = setTimeout(() => {
+      const today = new Date();
+      // February is month 1 (0-indexed). 28 is the 28th.
+      // Setting threshold to end of day Feb 28, 2026
+      const cutoffDate = new Date('2026-03-01T00:00:00');
+      if (today < cutoffDate) {
+        setShowChallenge(true);
+      }
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="flex min-h-screen flex-col pt-20">
+    <div className="flex min-h-screen flex-col pt-16">
       {/* 
         HERO SECTION
         Uses absolute positioning for decorative blur blobs (gradients) behind the content.
       */}
-      <section className="relative overflow-hidden px-6 pt-20 pb-24 lg:pt-32 lg:pb-36">
+      <section className="relative overflow-hidden px-6 pt-8 pb-12 lg:pt-16 lg:pb-20">
         {/* Decorative Background Gradients */}
         <div className="absolute inset-0 z-0 bg-white">
           <div className="bg-ousac-blue/5 absolute top-0 right-0 h-[800px] w-[800px] translate-x-1/3 -translate-y-1/2 rounded-full blur-3xl"></div>
           <div className="bg-ousac-purple/5 absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/4 translate-y-1/3 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="animate-fade-in-up relative z-10 mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+        <div className="animate-fade-in-up relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           {/* Text Content */}
           <div>
             {/* Status Badge */}
-            <div className="text-ousac-blue mb-8 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
+            <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
                 <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
@@ -63,14 +79,14 @@ export default function Home() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display text-ousac-black mb-8 text-6xl leading-[0.9] font-bold tracking-tight sm:text-7xl lg:text-8xl">
+            <h1 className="font-display text-ousac-black mb-6 text-6xl leading-[0.9] font-bold tracking-tight sm:text-7xl lg:text-8xl">
               {SITE_CONTENT.hero.headlinePrefix} <br />
               <span className="from-ousac-blue to-ousac-purple bg-gradient-to-r bg-clip-text text-transparent">
                 {SITE_CONTENT.hero.headlineSuffix}
               </span>
             </h1>
 
-            <p className="mb-10 max-w-lg text-lg leading-relaxed font-light text-gray-600 md:text-xl">
+            <p className="mb-8 max-w-lg text-lg leading-relaxed font-light text-gray-600 md:text-xl">
               {SITE_CONTENT.hero.subtext}
             </p>
 
@@ -91,7 +107,7 @@ export default function Home() {
             </div>
 
             {/* Quick Details - Emphasized */}
-            <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
               <div className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white px-5 py-3 shadow-sm">
                 <div className="text-ousac-purple rounded-lg bg-white p-2 shadow-sm">
                   <Calendar className="h-6 w-6" />
@@ -123,19 +139,19 @@ export default function Home() {
           </div>
 
           {/* Hero Visual - School Logos Grid */}
-          <div className="relative flex h-[450px] items-center justify-center overflow-hidden rounded-3xl bg-white p-8 shadow-2xl shadow-blue-900/10 lg:h-[550px]">
+          <div className="relative flex h-[350px] items-center justify-center overflow-hidden rounded-3xl bg-white p-8 shadow-2xl shadow-blue-900/10 lg:h-[450px]">
             {/* Background pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px] opacity-5"></div>
 
             <div className="relative z-10 w-full">
-              <p className="mb-12 text-center text-sm font-bold tracking-widest text-gray-400 uppercase">
+              <p className="mb-10 text-center text-sm font-bold tracking-widest text-gray-400 uppercase">
                 Participating Universities
               </p>
               <div className="grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-3">
                 {MEMBER_CLUBS.map((club) => (
                   <div
                     key={club.id}
-                    className="relative h-24 w-24 transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 md:h-32 md:w-32 md:opacity-80 md:grayscale"
+                    className="relative h-20 w-20 transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 md:h-28 md:w-28 md:opacity-80 md:grayscale"
                   >
                     <Image
                       src={club.universityLogo}
@@ -152,9 +168,9 @@ export default function Home() {
       </section>
 
       {/* Intro Text / Value Prop */}
-      <section className="bg-ousac-blue/5 px-6 py-24">
+      <section className="bg-ousac-blue/5 px-6 py-12">
         <div className="animate-fade-in-up mx-auto max-w-3xl text-center delay-200">
-          <h2 className="font-display text-ousac-black mb-6 text-4xl font-bold">
+          <h2 className="font-display text-ousac-black mb-4 text-4xl font-bold">
             {SITE_CONTENT.valueProp.title}
           </h2>
           <p className="text-xl leading-relaxed font-light text-gray-600">
@@ -163,11 +179,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Challenge - Time Sensitive */}
+      {showChallenge && (
+        <section className="bg-gray-900 px-6 py-8 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="rounded-2xl bg-gradient-to-r from-blue-900 to-indigo-900 p-8 shadow-2xl sm:p-10">
+              <div className="mx-auto max-w-2xl text-center">
+                <h2 className="font-display mb-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  MLSE UofTSPAN Data Challenge
+                </h2>
+                <p className="mb-6 text-lg leading-8 text-blue-100">
+                  Analyze exclusive motion capture data from the MLSE Sport
+                  Performance Lab. Submissions open until February 21st.
+                </p>
+                <div className="flex items-center justify-center gap-x-6">
+                  <Link
+                    href="/conference/data-challenge"
+                    className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Featured Speakers Preview (Carousel) */}
       {SHOW_SPEAKERS && (
-        <section className="border-t border-gray-100 bg-white px-6 py-24">
+        <section className="border-t border-gray-100 bg-white px-6 py-12">
           <div className="mx-auto max-w-7xl">
-            <div className="mb-16 flex items-end justify-between">
+            <div className="mb-12 flex items-end justify-between">
               <div>
                 <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
                   {SITE_CONTENT.speakers.label}
@@ -203,7 +246,7 @@ export default function Home() {
               </div>
 
               {/* Carousel Content Side */}
-              <div className="relative flex flex-col justify-center bg-white p-10 lg:p-16">
+              <div className="relative flex flex-col justify-center bg-white p-10 lg:p-12">
                 <div className="flex-grow">
                   <div className="mb-6 flex items-start justify-between gap-4">
                     <div>

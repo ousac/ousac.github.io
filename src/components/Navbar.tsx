@@ -14,7 +14,14 @@ import {
   NavItems,
 } from '@/components/ui/motion-navbar';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
-import { Calendar, Users, Handshake, MapPin, Trophy } from 'lucide-react';
+import {
+  Calendar,
+  Users,
+  Handshake,
+  MapPin,
+  Trophy,
+  Database,
+} from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const CONFERENCE_ITEMS = [
@@ -27,12 +34,17 @@ const Navbar: React.FC = () => {
       href: '/conference/student-competition',
       icon: Trophy,
     },
+    {
+      label: 'Data Challenge',
+      href: '/conference/data-challenge',
+      icon: Database,
+    },
   ];
 
   const MAIN_NAV_ITEMS = [
     { label: 'About', href: '/about' },
-    { label: 'Past Conferences', href: '/past-conferences' },
     { label: 'Members', href: '/members' },
+    { label: 'Past Conferences', href: '/past-conferences' },
   ];
 
   return (
@@ -63,7 +75,7 @@ const Navbar: React.FC = () => {
             </MobileNavHeader>
             <MobileNavMenu>
               {/* Conference Section Header */}
-              <div className="border-b border-gray-100 pb-2">
+              <div className="border-b border-gray-100 pb-1">
                 <p className="mb-2 px-2 text-sm font-semibold tracking-wide text-gray-400 uppercase">
                   Conference
                 </p>
