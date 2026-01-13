@@ -542,8 +542,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     university: 'University of Waterloo',
     logoPath: '/img/uwaggs_logo.webp',
     universityLogo: '/img/universities/university_of_waterloo.avif',
-    description:
-      'University of Waterloo Analytics Group for Games and Sports',
+    description: 'University of Waterloo Analytics Group for Games and Sports',
     linktreeUrl: 'https://linktr.ee/uwaggs',
   },
   {

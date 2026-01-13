@@ -70,6 +70,7 @@ export interface MemberClub {
   name: string;
   university: string;
   logoPath: string;
+  universityLogo: string;
   description: string;
   linktreeUrl: string; // External link to the club's resources
 }
