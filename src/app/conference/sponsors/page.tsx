@@ -37,7 +37,7 @@ export default function Sponsors() {
                         src={s.logoPath}
                         alt={s.name}
                         fill
-                        className="object-contain opacity-80 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+                        className="object-contain opacity-100 transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:opacity-80 md:grayscale"
                       />
                     </div>
                   ))}
@@ -61,7 +61,7 @@ export default function Sponsors() {
                         src={s.logoPath}
                         alt={s.name}
                         fill
-                        className="object-contain opacity-80 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+                        className="object-contain opacity-100 transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:opacity-80 md:grayscale"
                       />
                     </div>
                   ))}
@@ -85,7 +85,7 @@ export default function Sponsors() {
                         src={s.logoPath}
                         alt={s.name}
                         fill
-                        className="object-contain opacity-70 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+                        className="object-contain opacity-100 transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:opacity-70 md:grayscale"
                       />
                     </div>
                   ))}

@@ -207,7 +207,8 @@ export default function Home() {
       )}
 
       {/* Featured Speakers Preview (Carousel) */}
-      {SHOW_SPEAKERS && (
+
+      {SHOW_SPEAKERS && keynoteSpeakers.length > 0 && (
         <section className="border-t border-gray-100 bg-white px-6 py-12">
           <div className="mx-auto max-w-7xl">
             <div className="mb-12 flex items-end justify-between">

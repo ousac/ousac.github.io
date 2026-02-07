@@ -12,8 +12,9 @@ import { ScheduleItem, Speaker, Sponsor, MemberClub } from '@/types/types';
 export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Feature Flags
-export const SHOW_SPEAKERS = false;
+export const SHOW_SPEAKERS = true;
 export const SHOW_SPONSORS = false;
+export const SHOW_SCHEDULE = false;
 
 // Stripe Payment Links (created in Stripe Dashboard)
 export const STRIPE_PAYMENT_LINKS = {
@@ -108,6 +109,30 @@ export const SITE_CONTENT = {
   },
 };
 
+export const CHALLENGE_DATA = {
+  title: 'MLSE UofTSPAN Data Challenge 2026',
+  host: 'MLSE Sport Performance Lab',
+  kaggleLink:
+    'https://www.kaggle.com/competitions/spl-utspan-data-challenge-2026/overview',
+  description: `Welcome to the 2026 edition of the University of Toronto Sports Analytics Group Data Challenge in partnership with the Sport Performance Lab from Maple Leaf Sports & Entertainment (MLSE)!`,
+  details: {
+    goal: 'Build a model to predict basketball shot outcome (angle, depth, and left/right) values from biomechanical movement data.',
+    data: 'Markerless motion capture data from 458 basketball free throws completed by 5 participants of varying experience levels.',
+    keypoints:
+      'X, Y, and Z position of 71 keypoints on the participant body for each trial.',
+  },
+  timeline: [
+    { date: 'January 6, 2026', event: 'Competition Opens', completed: true },
+    { date: 'February 21, 2026', event: 'Submissions Close' },
+    { date: 'February 28, 2026', event: 'Finalists Announced' },
+    {
+      date: 'March 14, 2026',
+      event: 'Presentations at OUSAC',
+      highlight: true,
+    },
+  ],
+};
+
 // ----------------------------------------------------------------------
 // DATA COLLECTIONS
 // ----------------------------------------------------------------------
@@ -116,7 +141,8 @@ export const SITE_CONTENT = {
  * List of confirmed speakers.
  * Note: 'isKeynote' determines inclusion in the Home page carousel.
  */
-export const SPEAKERS: Speaker[] = [
+// RAW data
+const ALL_SPEAKERS: Speaker[] = [
   {
     id: 's1',
     firstName: 'Liam',
@@ -124,10 +150,11 @@ export const SPEAKERS: Speaker[] = [
     role: 'Senior Data Scientist',
     organization: 'Toronto Blue Jays',
     bio: 'Leads predictive modelling products focusing on pro players and player evaluation. Driven by evolving analytical frameworks to quantify decisions at the highest level.',
-    imagePath: '/img/liam_stevenson.jpeg',
-    companyLogo: '/img/toronto_bluejays_logo.png',
+    imagePath: '/img/speakers/liam_stevenson.jpeg',
+    companyLogo: '/img/sponsors/toronto_bluejays_logo.png',
     category: 'Keynote',
     isKeynote: true,
+    isAnnounced: false,
     socials: {
       linkedin: 'https://www.linkedin.com/in/liam-stevenson-9b753483/',
     },
@@ -140,9 +167,10 @@ export const SPEAKERS: Speaker[] = [
     organization: 'MLSE',
     bio: 'Leads the Sport Performance Lab at MLSE, working closely with teams on strategic research in sports analytics and player performance.',
     imagePath: '/img/ousac_logo.png',
-    companyLogo: '/img/mlse_logo.png',
+    companyLogo: '/img/sponsors/mlse_logo.png',
     category: 'Keynote',
     isKeynote: true,
+    isAnnounced: false,
     socials: { linkedin: 'https://www.linkedin.com/in/dpleuler/' },
   },
   {
@@ -152,10 +180,11 @@ export const SPEAKERS: Speaker[] = [
     role: 'Data Scientist',
     organization: 'SMT',
     bio: 'Ph.D. physicist with 20 years in solar astrophysics now applying automated tracking methods to measure player skills in live-game settings.',
-    imagePath: '/img/meredith_willis.jpeg',
-    companyLogo: '/img/smt_logo.webp',
+    imagePath: '/img/speakers/meredith_willis.png',
+    companyLogo: '/img/sponsors/smt_logo.webp',
     category: 'Keynote',
     isKeynote: true,
+    isAnnounced: false,
     socials: {
       linkedin: 'https://www.linkedin.com/in/meredith-wills-0536765b',
     },
@@ -170,6 +199,7 @@ export const SPEAKERS: Speaker[] = [
     imagePath: '/img/ousac_logo.png',
     category: 'Featured',
     isKeynote: false,
+    isAnnounced: false,
     socials: {},
   },
   {
@@ -179,10 +209,13 @@ export const SPEAKERS: Speaker[] = [
     role: 'Analyst',
     organization: 'Canada Basketball',
     bio: 'Performance Analyst for Canada Basketball.',
-    imagePath: '/img/ousac_logo.png',
+    imagePath: '/img/speakers/philip_jevtovic.jpeg',
     category: 'Featured',
     isKeynote: false,
-    socials: {},
+    isAnnounced: true,
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/philip-jevtovic-99083947/',
+    },
   },
   {
     id: 'p3',
@@ -194,6 +227,7 @@ export const SPEAKERS: Speaker[] = [
     imagePath: '/img/ousac_logo.png',
     category: 'Featured',
     isKeynote: false,
+    isAnnounced: false,
     socials: {},
   },
   {
@@ -206,6 +240,7 @@ export const SPEAKERS: Speaker[] = [
     imagePath: '/img/ousac_logo.png',
     category: 'Featured',
     isKeynote: false,
+    isAnnounced: false,
     socials: {},
   },
   {
@@ -218,9 +253,14 @@ export const SPEAKERS: Speaker[] = [
     imagePath: '/img/ousac_logo.png',
     category: 'Student',
     isKeynote: false,
+    isAnnounced: false,
     socials: {},
   },
 ];
+
+export const SPEAKERS: Speaker[] = ALL_SPEAKERS.filter(
+  (s) => s.isAnnounced !== false
+);
 
 /**
  * Conference Schedule.
@@ -457,42 +497,42 @@ export const SPONSORS: Sponsor[] = [
     id: 'sp1',
     name: 'MLSE',
     tier: 'Platinum',
-    logoPath: '/img/mlse_logo.png',
+    logoPath: '/img/sponsors/mlse_logo.png',
     website: 'https://www.mlse.com/',
   },
   {
     id: 'sp2',
     name: 'SMT',
     tier: 'Platinum',
-    logoPath: '/img/smt_logo.webp',
+    logoPath: '/img/sponsors/smt_logo.webp',
     website: 'https://smt.com/',
   },
   {
     id: 'sp3',
     name: 'TISS',
     tier: 'Gold',
-    logoPath: '/img/tiss_logo.png',
+    logoPath: '/img/sponsors/tiss_logo.png',
     website: 'https://tiss.ca/',
   },
   {
     id: 'sp4',
     name: 'CANSSI',
     tier: 'Silver',
-    logoPath: '/img/canssi_logo.png',
+    logoPath: '/img/sponsors/canssi_logo.png',
     website: 'https://canssi.ca/',
   },
   {
     id: 'sp5',
     name: 'Toronto Blue Jays',
     tier: 'Platinum',
-    logoPath: '/img/toronto_bluejays_logo.png',
+    logoPath: '/img/sponsors/toronto_bluejays_logo.png',
     website: 'https://www.mlb.com/bluejays',
   },
   {
     id: 'sp6',
     name: 'MLSE Sport Performance Lab',
     tier: 'Dataset Partner',
-    logoPath: '/img/mlse_logo.png',
+    logoPath: '/img/sponsors/mlse_logo.png',
     website:
       'https://www.mlsedigital.com/innovation-initiatives/sport-performance-lab',
     description: 'The Sport Performance Lab (SPL) at MLSE.',
@@ -531,7 +571,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm1',
     name: 'UTSPAN',
     university: 'University of Toronto',
-    logoPath: '/img/utspan_logo.webp',
+    logoPath: '/img/clubs/utspan_logo.webp',
     universityLogo: '/img/universities/university_of_toronto.png',
     description: 'University of Toronto Sports Analytics Student Group',
     linktreeUrl: 'https://linktr.ee/utspan',
@@ -540,7 +580,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm2',
     name: 'UWAGGS',
     university: 'University of Waterloo',
-    logoPath: '/img/uwaggs_logo.webp',
+    logoPath: '/img/clubs/uwaggs_logo.webp',
     universityLogo: '/img/universities/university_of_waterloo.avif',
     description: 'University of Waterloo Analytics Group for Games and Sports',
     linktreeUrl: 'https://linktr.ee/uwaggs',
@@ -549,7 +589,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm3',
     name: 'QSAO',
     university: "Queen's University",
-    logoPath: '/img/qsao_logo.webp',
+    logoPath: '/img/clubs/qsao_logo.webp',
     universityLogo: '/img/universities/queens_university.png',
     description: "Queen's Sports Analytics Organization",
     linktreeUrl: 'https://linktr.ee/qsaoqueens2023',
@@ -558,7 +598,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm4',
     name: 'WSAC',
     university: 'University of Western Ontario',
-    logoPath: '/img/western_logo.webp',
+    logoPath: '/img/clubs/western_logo.webp',
     universityLogo: '/img/universities/western_university.png',
     description: 'Western Sports Analytics Club',
     linktreeUrl: 'https://linktr.ee/wsac',
@@ -567,7 +607,7 @@ export const MEMBER_CLUBS: MemberClub[] = [
     id: 'm5',
     name: 'YSAC',
     university: 'York University',
-    logoPath: '/img/ysac_logo.webp',
+    logoPath: '/img/clubs/ysac_logo.webp',
     universityLogo: '/img/universities/york_university.png',
     description: 'York Sports Analytics Club',
     linktreeUrl: 'https://linktr.ee/yorkusac',

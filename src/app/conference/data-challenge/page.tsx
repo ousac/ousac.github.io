@@ -4,31 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
 import { Trophy, Database, Users, ExternalLink } from 'lucide-react';
-
-// Local constants for this page
-const CHALLENGE_DATA = {
-  title: 'MLSE UofTSPAN Data Challenge 2026',
-  host: 'MLSE Sport Performance Lab',
-  kaggleLink:
-    'https://www.kaggle.com/competitions/spl-utspan-data-challenge-2026/overview',
-  description: `Welcome to the 2026 edition of the University of Toronto Sports Analytics Group Data Challenge in partnership with the Sport Performance Lab from Maple Leaf Sports & Entertainment (MLSE)!`,
-  details: {
-    goal: 'Build a model to predict basketball shot outcome (angle, depth, and left/right) values from biomechanical movement data.',
-    data: 'Markerless motion capture data from 458 basketball free throws completed by 5 participants of varying experience levels.',
-    keypoints:
-      'X, Y, and Z position of 71 keypoints on the participant body for each trial.',
-  },
-  timeline: [
-    { date: 'January 6, 2026', event: 'Competition Opens', completed: true },
-    { date: 'February 21, 2026', event: 'Submissions Close' },
-    { date: 'February 28, 2026', event: 'Finalists Announced' },
-    {
-      date: 'March 14, 2026',
-      event: 'Presentations at OUSAC',
-      highlight: true,
-    },
-  ],
-};
+import { CHALLENGE_DATA } from '@/lib/constants';
 
 export default function DataChallengePage() {
   return (

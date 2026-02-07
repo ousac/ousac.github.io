@@ -21,6 +21,7 @@ export interface Speaker {
   companyLogo?: string; // Optional logo of their organization
   category: 'Keynote' | 'Featured' | 'Student'; // Categorization for display
   isKeynote: boolean; // Determines if they appear in the Home page carousel
+  isAnnounced?: boolean; // Determines if they should be visible on the site
   socials: {
     linkedin?: string;
     twitter?: string;

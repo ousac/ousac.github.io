@@ -17,7 +17,7 @@ const SpeakerCard = ({ speaker }: { speaker: Speaker }) => (
         src={speaker.imagePath}
         alt={`${speaker.firstName} ${speaker.lastName}`}
         fill
-        className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+        className="object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 md:grayscale"
       />
 
       {/* Socials Overlay - Slides up on group hover */}
