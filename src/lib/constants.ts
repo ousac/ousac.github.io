@@ -170,7 +170,7 @@ const ALL_SPEAKERS: Speaker[] = [
     companyLogo: '/img/sponsors/mlse_logo.png',
     category: 'Keynote',
     isKeynote: true,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: { linkedin: 'https://www.linkedin.com/in/dpleuler/' },
   },
   {
@@ -259,7 +259,7 @@ const ALL_SPEAKERS: Speaker[] = [
 ];
 
 export const SPEAKERS: Speaker[] = ALL_SPEAKERS.filter(
-  (s) => s.isAnnounced !== false
+  (s) => s.isAnnounced === true
 );
 
 /**

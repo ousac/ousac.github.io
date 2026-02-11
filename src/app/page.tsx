@@ -31,6 +31,7 @@ export default function Home() {
 
   // EFFECT: Set up an interval to auto-rotate the speaker carousel every 6 seconds
   useEffect(() => {
+    if (keynoteSpeakers.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentSpeakerIndex((prev) => (prev + 1) % keynoteSpeakers.length);
     }, 6000);
@@ -282,20 +283,22 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Carousel Indicators */}
-                <div className="flex gap-2">
-                  {keynoteSpeakers.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSpeakerIndex(idx)}
-                      className={`h-1 rounded-full transition-all duration-300 ${
-                        idx === currentSpeakerIndex
-                          ? 'bg-ousac-black w-12'
-                          : 'w-4 bg-gray-200 hover:bg-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
+                {/* Carousel Indicators — only shown when there are multiple speakers */}
+                {keynoteSpeakers.length > 1 && (
+                  <div className="flex gap-2">
+                    {keynoteSpeakers.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSpeakerIndex(idx)}
+                        className={`h-1 rounded-full transition-all duration-300 ${
+                          idx === currentSpeakerIndex
+                            ? 'bg-ousac-black w-12'
+                            : 'w-4 bg-gray-200 hover:bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 

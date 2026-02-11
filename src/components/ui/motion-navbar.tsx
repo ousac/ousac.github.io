@@ -154,7 +154,7 @@ export const NavDropdown = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="shadow-card absolute top-full left-0 mt-4 min-w-[220px] rounded-xl border border-gray-100 bg-white p-2"
+            className="shadow-card absolute top-full left-0 mt-4 min-w-55 rounded-xl border border-gray-100 bg-white p-2"
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -219,7 +219,7 @@ export const MobileNav = ({
   return (
     <motion.div
       className={cn(
-        'fixed inset-0 z-[60] border-l border-gray-200 bg-white text-black shadow-xl lg:hidden',
+        'fixed inset-0 z-60 border-l border-gray-200 bg-white text-black shadow-xl lg:hidden',
         className
       )}
       initial={false}
@@ -291,7 +291,7 @@ export const MobileNavToggle = ({ className }: { className?: string }) => {
     <motion.button
       onClick={handleClick}
       className={cn(
-        'relative z-[70] flex items-center justify-center rounded-full p-3 text-black transition-colors hover:bg-gray-100 lg:hidden',
+        'relative z-70 flex items-center justify-center rounded-full p-3 text-black transition-colors hover:bg-gray-100 lg:hidden',
         className
       )}
       aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
