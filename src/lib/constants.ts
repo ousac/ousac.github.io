@@ -166,7 +166,7 @@ const ALL_SPEAKERS: Speaker[] = [
     role: 'Sr. Director, R&D – Team Ops',
     organization: 'MLSE',
     bio: 'Devin Pleuler is the Senior Director of Research and Development at Maple Leaf Sports & Entertainment, where he leads the Sport Performance Lab — an applied research group integrating analytics, biomechanics, and technology across MLSE’s teams. He also recently taught a graduate course on Artificial Intelligence in Sports Analytics at the University of Toronto.',
-    imagePath: '/img/ousac_logo.png',
+    imagePath: '/img/speakers/devin_pleuler.jpeg',
     companyLogo: '/img/sponsors/mlse_logo.png',
     category: 'Keynote',
     isKeynote: true,
