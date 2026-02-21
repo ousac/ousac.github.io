@@ -13,7 +13,7 @@ export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Feature Flags
 export const SHOW_SPEAKERS = true;
-export const SHOW_SPONSORS = false;
+export const SHOW_SPONSORS = true;
 export const SHOW_SCHEDULE = false;
 
 // Stripe Payment Links (created in Stripe Dashboard)
@@ -154,7 +154,7 @@ const ALL_SPEAKERS: Speaker[] = [
     companyLogo: '/img/sponsors/toronto_bluejays_logo.png',
     category: 'Keynote',
     isKeynote: true,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: {
       linkedin: 'https://www.linkedin.com/in/liam-stevenson-9b753483/',
     },
@@ -184,7 +184,7 @@ const ALL_SPEAKERS: Speaker[] = [
     companyLogo: '/img/sponsors/smt_logo.webp',
     category: 'Keynote',
     isKeynote: true,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: {
       linkedin: 'https://www.linkedin.com/in/meredith-wills-0536765b',
     },
@@ -294,8 +294,8 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Keynote 1',
     type: 'Keynote',
     location: 'Auditorium A',
-    description: 'Keynote Address by Liam Stevenson.',
-    speakerIds: ['s1'],
+    description: 'Keynote Address.',
+    speakerIds: [],
   },
   {
     id: 'sch4',
@@ -305,8 +305,8 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
     location: 'Auditorium A',
-    description: 'Presentation by OJ Adeyemi.',
-    speakerIds: ['c1'],
+    description: 'Canada Basketball Analytics Competition winner presentation.',
+    speakerIds: [],
   },
   {
     id: 'sch5',
@@ -326,7 +326,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Keynote',
     location: 'Auditorium A',
     description: 'Industry Panel Discussion.',
-    speakerIds: ['p1', 'p2', 'p3', 'p4'],
+    speakerIds: [],
   },
   {
     id: 'sch7',
@@ -345,8 +345,8 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Keynote 2',
     type: 'Keynote',
     location: 'Auditorium A',
-    description: 'Keynote Address by Devin Pleuler.',
-    speakerIds: ['s2'],
+    description: 'Keynote Address.',
+    speakerIds: [],
   },
   {
     id: 'sch9',
@@ -460,20 +460,20 @@ export const SCHEDULE: ScheduleItem[] = [
     id: 'sch19',
     startTime: '4:00 PM',
     endTime: '4:30 PM',
-    title: 'Keynote Closer',
+    title: 'Keynote 3',
     type: 'Keynote',
     location: 'Auditorium A',
-    description: 'Closing Keynote by Meredith Wills.',
-    speakerIds: ['s3'],
+    description: 'Closing Keynote Address.',
+    speakerIds: [],
   },
   {
     id: 'sch20',
     startTime: '4:30 PM',
     endTime: '4:55 PM',
-    title: 'Final Remarks + Awards',
+    title: "Final Remarks + Student Awards + Thank You's",
     type: 'Keynote',
     location: 'Auditorium A',
-    description: 'Student Awards and Thank You.',
+    description: "Closing remarks, student awards, and thank you's.",
     speakerIds: [],
   },
   {
@@ -492,20 +492,23 @@ export const SCHEDULE: ScheduleItem[] = [
  * Conference Sponsors.
  * Tiers are rendered with different sizing in the Sponsors component.
  */
-export const SPONSORS: Sponsor[] = [
+const ALL_SPONSORS: Sponsor[] = [
   {
     id: 'sp1',
-    name: 'MLSE',
-    tier: 'Platinum',
-    logoPath: '/img/sponsors/mlse_logo.png',
-    website: 'https://www.mlse.com/',
-  },
-  {
-    id: 'sp2',
     name: 'SMT',
     tier: 'Platinum',
     logoPath: '/img/sponsors/smt_logo.webp',
     website: 'https://smt.com/',
+    isVisible: true,
+    darkBackground: true,
+  },
+  {
+    id: 'sp2',
+    name: 'CANSSI',
+    tier: 'Platinum',
+    logoPath: '/img/sponsors/canssi_logo.png',
+    website: 'https://canssi.ca/',
+    isVisible: true,
   },
   {
     id: 'sp3',
@@ -513,31 +516,27 @@ export const SPONSORS: Sponsor[] = [
     tier: 'Gold',
     logoPath: '/img/sponsors/tiss_logo.png',
     website: 'https://tiss.ca/',
+    isVisible: true,
   },
   {
     id: 'sp4',
-    name: 'CANSSI',
-    tier: 'Silver',
-    logoPath: '/img/sponsors/canssi_logo.png',
-    website: 'https://canssi.ca/',
+    name: 'MLSE',
+    tier: 'In-Kind',
+    logoPath: '/img/sponsors/mlse_logo.png',
+    website: 'https://www.mlse.com/',
+    isVisible: true,
   },
   {
     id: 'sp5',
     name: 'Toronto Blue Jays',
-    tier: 'Platinum',
+    tier: 'In-Kind',
     logoPath: '/img/sponsors/toronto_bluejays_logo.png',
     website: 'https://www.mlb.com/bluejays',
-  },
-  {
-    id: 'sp6',
-    name: 'MLSE Sport Performance Lab',
-    tier: 'Dataset Partner',
-    logoPath: '/img/sponsors/mlse_logo.png',
-    website:
-      'https://www.mlsedigital.com/innovation-initiatives/sport-performance-lab',
-    description: 'The Sport Performance Lab (SPL) at MLSE.',
+    isVisible: true,
   },
 ];
+
+export const SPONSORS = ALL_SPONSORS.filter((s) => s.isVisible);
 
 /**
  * Archive Photos (2025)

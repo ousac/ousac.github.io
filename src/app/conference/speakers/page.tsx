@@ -8,8 +8,13 @@ import { Speaker } from '@/types/types';
 
 // ... SpeakerCard and Section components ...
 
-const SpeakerCard = ({ speaker }: { speaker: Speaker }) => (
-  // ... existing code ...
+const SpeakerCard = ({
+  speaker,
+  expandBio = false,
+}: {
+  speaker: Speaker;
+  expandBio?: boolean;
+}) => (
   <div className="group flex flex-col">
     {/* Image Container - Aspect Ratio 4:5 */}
     <div className="relative mb-6 aspect-square overflow-hidden rounded-sm bg-gray-100 md:aspect-[4/5]">
@@ -65,7 +70,9 @@ const SpeakerCard = ({ speaker }: { speaker: Speaker }) => (
       <p className="text-ousac-purple mb-4 text-sm font-medium">
         {speaker.role}, {speaker.organization}
       </p>
-      <p className="line-clamp-3 text-sm leading-relaxed text-gray-500 transition-colors group-hover:text-gray-900">
+      <p
+        className={`text-sm leading-relaxed text-gray-500 transition-colors group-hover:text-gray-900 ${expandBio ? '' : 'line-clamp-3'}`}
+      >
         {speaker.bio}
       </p>
     </div>
@@ -77,11 +84,13 @@ const Section = ({
   speakers,
   defaultOpen = true,
   isComingSoon = false,
+  expandBio = false,
 }: {
   title: string;
   speakers: Speaker[];
   defaultOpen?: boolean;
   isComingSoon?: boolean;
+  expandBio?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -120,9 +129,15 @@ const Section = ({
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-x-8 gap-y-12 pt-8 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
+            <div
+              className={`grid grid-cols-1 gap-x-8 gap-y-12 pt-8 md:gap-y-16 ${expandBio ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'}`}
+            >
               {speakers.map((speaker) => (
-                <SpeakerCard key={speaker.id} speaker={speaker} />
+                <SpeakerCard
+                  key={speaker.id}
+                  speaker={speaker}
+                  expandBio={expandBio}
+                />
               ))}
             </div>
           )}
@@ -155,6 +170,7 @@ export default function Speakers() {
           title="Keynote Speakers"
           speakers={keynoteSpeakers}
           isComingSoon={!SHOW_SPEAKERS}
+          expandBio
         />
         <Section
           title="Featured Speakers & Panelists"

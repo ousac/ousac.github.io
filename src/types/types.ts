@@ -57,10 +57,12 @@ export interface ScheduleItem {
 export interface Sponsor {
   id: string;
   name: string;
-  tier: 'Platinum' | 'Gold' | 'Silver' | 'Partner' | 'Dataset Partner';
+  tier: 'Platinum' | 'Gold' | 'Silver' | 'Bronze' | 'In-Kind';
   logoPath: string;
   website: string;
   description?: string; // Optional description, primarily for the 'Partner' tier
+  isVisible?: boolean;
+  darkBackground?: boolean;
 }
 
 /**
