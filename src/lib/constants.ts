@@ -13,7 +13,7 @@ export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Feature Flags
 export const SHOW_SPEAKERS = true;
-export const SHOW_SPONSORS = true;
+export const SHOW_SPONSORS = false;
 export const SHOW_SCHEDULE = false;
 
 // Stripe Payment Links (created in Stripe Dashboard)
