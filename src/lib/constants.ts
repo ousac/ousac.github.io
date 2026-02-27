@@ -13,8 +13,8 @@ export const GOOGLE_FORM_ABSTRACT = 'https://forms.gle/o7eMqDv9D66DeJTFA';
 
 // Feature Flags
 export const SHOW_SPEAKERS = true;
-export const SHOW_SPONSORS = false;
-export const SHOW_SCHEDULE = false;
+export const SHOW_SPONSORS = true;
+export const SHOW_SCHEDULE = true;
 
 // Stripe Payment Links (created in Stripe Dashboard)
 export const STRIPE_PAYMENT_LINKS = {
@@ -497,9 +497,9 @@ const ALL_SPONSORS: Sponsor[] = [
     id: 'sp1',
     name: 'SMT',
     tier: 'Platinum',
-    logoPath: '/img/sponsors/smt_logo.webp',
+    logoPath: '/img/sponsors/smt_logo.png',
     website: 'https://smt.com/',
-    isVisible: true,
+    isVisible: false,
     darkBackground: true,
   },
   {
@@ -524,7 +524,7 @@ const ALL_SPONSORS: Sponsor[] = [
     tier: 'In-Kind',
     logoPath: '/img/sponsors/mlse_logo.png',
     website: 'https://www.mlse.com/',
-    isVisible: true,
+    isVisible: false,
   },
   {
     id: 'sp5',
@@ -532,7 +532,7 @@ const ALL_SPONSORS: Sponsor[] = [
     tier: 'In-Kind',
     logoPath: '/img/sponsors/toronto_bluejays_logo.png',
     website: 'https://www.mlb.com/bluejays',
-    isVisible: true,
+    isVisible: false,
   },
 ];
 

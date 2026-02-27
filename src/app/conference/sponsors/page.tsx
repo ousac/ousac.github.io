@@ -46,16 +46,17 @@ export default function Sponsors() {
                     rel="noopener noreferrer"
                     aria-label={`Visit ${s.name} website`}
                     className={cn(
-                      'group relative block transition-transform duration-300 ease-out hover:scale-105',
+                      'relative block',
                       TIER_CONFIG[s.tier],
-                      s.darkBackground && 'rounded-xl bg-gray-900 p-4'
+                      s.darkBackground &&
+                        'h-56 w-56 rounded-xl bg-gray-900 p-6 md:h-72 md:w-72'
                     )}
                   >
                     <Image
                       src={s.logoPath}
                       alt={s.name}
                       fill
-                      className="object-contain transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 md:opacity-75 md:grayscale"
+                      className="object-contain"
                     />
                   </a>
                 ))}
