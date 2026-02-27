@@ -45,7 +45,7 @@ export interface ScheduleItem {
     | 'Break'
     | 'Competition';
   track?: 'Technical' | 'Business'; // Optional track for filtering
-  location: string;
+  location?: string;
   description?: string;
   speakerIds: string[]; // Foreign keys linking to Speaker.id
 }

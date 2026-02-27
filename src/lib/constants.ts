@@ -273,7 +273,6 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '9:50 AM',
     title: 'Registration',
     type: 'Networking',
-    location: 'Main Hall',
     description: 'Check-in and breakfast.',
     speakerIds: [],
   },
@@ -283,7 +282,6 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '10:00 AM',
     title: 'Opening Remarks + Housekeeping',
     type: 'Keynote',
-    location: 'Auditorium A',
     description: 'Welcome to OUSAC 2026.',
     speakerIds: [],
   },
@@ -293,7 +291,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '10:30 AM',
     title: 'Keynote 1',
     type: 'Keynote',
-    location: 'Auditorium A',
+
     description: 'Keynote Address.',
     speakerIds: [],
   },
@@ -304,7 +302,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Canada Basketball Winner',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Canada Basketball Analytics Competition winner presentation.',
     speakerIds: [],
   },
@@ -314,7 +312,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '11:00 AM',
     title: 'Stretch Break',
     type: 'Break',
-    location: 'Main Hall',
+
     description: '',
     speakerIds: [],
   },
@@ -324,7 +322,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '12:00 PM',
     title: 'Panel',
     type: 'Keynote',
-    location: 'Auditorium A',
+
     description: 'Industry Panel Discussion.',
     speakerIds: [],
   },
@@ -334,7 +332,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '1:00 PM',
     title: 'Lunch',
     type: 'Networking',
-    location: 'Main Hall',
+
     description: 'Catered lunch served.',
     speakerIds: [],
   },
@@ -344,7 +342,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '1:30 PM',
     title: 'Keynote 2',
     type: 'Keynote',
-    location: 'Auditorium A',
+
     description: 'Keynote Address.',
     speakerIds: [],
   },
@@ -355,7 +353,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'SPL Presentation 1',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Sport Performance Lab presentation.',
     speakerIds: [],
   },
@@ -366,7 +364,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'SPL Presentation 2',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Sport Performance Lab presentation.',
     speakerIds: [],
   },
@@ -377,7 +375,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'SPL Presentation 3',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Sport Performance Lab presentation.',
     speakerIds: [],
   },
@@ -387,7 +385,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '2:30 PM',
     title: 'Stretch Break',
     type: 'Break',
-    location: 'Main Hall',
+
     description: '',
     speakerIds: [],
   },
@@ -398,7 +396,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Student Presentation 1',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Research track presentation.',
     speakerIds: [],
   },
@@ -409,7 +407,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Student Presentation 2',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Research track presentation.',
     speakerIds: [],
   },
@@ -420,7 +418,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Student Presentation 3',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Research track presentation.',
     speakerIds: [],
   },
@@ -431,7 +429,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Student Presentation 4',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Research track presentation.',
     speakerIds: [],
   },
@@ -442,7 +440,7 @@ export const SCHEDULE: ScheduleItem[] = [
     title: 'Student Presentation 5',
     type: 'Competition',
     track: 'Technical',
-    location: 'Auditorium A',
+
     description: 'Research track presentation.',
     speakerIds: [],
   },
@@ -452,7 +450,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '4:00 PM',
     title: 'Stretch Break',
     type: 'Break',
-    location: 'Main Hall',
+
     description: '',
     speakerIds: [],
   },
@@ -462,7 +460,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '4:30 PM',
     title: 'Keynote 3',
     type: 'Keynote',
-    location: 'Auditorium A',
+
     description: 'Closing Keynote Address.',
     speakerIds: [],
   },
@@ -472,7 +470,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '4:55 PM',
     title: "Final Remarks + Student Awards + Thank You's",
     type: 'Keynote',
-    location: 'Auditorium A',
+
     description: "Closing remarks, student awards, and thank you's.",
     speakerIds: [],
   },
@@ -482,7 +480,7 @@ export const SCHEDULE: ScheduleItem[] = [
     endTime: '',
     title: 'Conference Adjourns',
     type: 'Networking',
-    location: 'Auditorium A',
+
     description: 'End of OUSAC 2026.',
     speakerIds: [],
   },

@@ -111,10 +111,12 @@ export default function Schedule() {
                     {item.title}
                   </h3>
 
-                  <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">
-                    <MapPin className="h-3.5 w-3.5" />
-                    <span>{item.location}</span>
-                  </div>
+                  {item.location && (
+                    <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">
+                      <MapPin className="h-3.5 w-3.5" />
+                      <span>{item.location}</span>
+                    </div>
+                  )}
 
                   {/* Inline Speakers (Small Avatars) */}
                   {SHOW_SPEAKERS && item.speakerIds.length > 0 && (
@@ -192,12 +194,16 @@ export default function Schedule() {
                   </div>
                 </div>
                 <div className="rounded-xl border border-gray-100 bg-gray-50 p-4">
-                  <span className="mb-1 block text-xs font-bold tracking-wider text-gray-400 uppercase">
-                    Location
-                  </span>
-                  <div className="text-ousac-black font-bold">
-                    {selectedSession.location}
-                  </div>
+                  {selectedSession.location && (
+                    <>
+                      <span className="mb-1 block text-xs font-bold tracking-wider text-gray-400 uppercase">
+                        Location
+                      </span>
+                      <div className="text-ousac-black font-bold">
+                        {selectedSession.location}
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 

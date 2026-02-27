@@ -17,7 +17,7 @@ const SpeakerCard = ({
 }) => (
   <div className="group flex flex-col">
     {/* Image Container - Aspect Ratio 4:5 */}
-    <div className="relative mb-6 aspect-square overflow-hidden rounded-sm bg-gray-100 md:aspect-[4/5]">
+    <div className="relative mb-6 aspect-4/3 overflow-hidden rounded-sm bg-gray-100 md:aspect-4/3">
       <Image
         src={speaker.imagePath}
         alt={`${speaker.firstName} ${speaker.lastName}`}
