@@ -227,7 +227,7 @@ const ALL_SPEAKERS: Speaker[] = [
     imagePath: '/img/speakers/brendan_kumagai.jpeg',
     category: 'Featured',
     isKeynote: false,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: {},
   },
   {
@@ -240,7 +240,7 @@ const ALL_SPEAKERS: Speaker[] = [
     imagePath: '/img/speakers/mike_heenan.jpeg',
     category: 'Featured',
     isKeynote: false,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: {},
   },
   {
