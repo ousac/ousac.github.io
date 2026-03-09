@@ -349,7 +349,7 @@ export const SCHEDULE: ScheduleItem[] = [
   {
     id: 'sch9',
     startTime: '1:30 PM',
-    endTime: '1:40 PM',
+    endTime: '1:45 PM',
     title: 'SPL Presentation 1',
     type: 'Competition',
     track: 'Technical',
@@ -359,8 +359,8 @@ export const SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 'sch10',
-    startTime: '1:40 PM',
-    endTime: '1:50 PM',
+    startTime: '1:45 PM',
+    endTime: '2:00 PM',
     title: 'SPL Presentation 2',
     type: 'Competition',
     track: 'Technical',
@@ -370,7 +370,7 @@ export const SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 'sch11',
-    startTime: '1:50 PM',
+    startTime: '2:00 PM',
     endTime: '2:15 PM',
     title: 'SPL Presentation 3',
     type: 'Competition',
