@@ -281,7 +281,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Canada Basketball Analytics Competition winner presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -332,7 +332,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Sport Performance Lab presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -343,7 +343,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Sport Performance Lab presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -354,7 +354,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Sport Performance Lab presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -375,7 +375,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Research track presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -386,7 +386,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Research track presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -397,7 +397,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Research track presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -408,7 +408,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Research track presentation.',
+    description: '',
     speakerIds: [],
   },
   {
@@ -419,7 +419,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Competition',
     track: 'Technical',
 
-    description: 'Research track presentation.',
+    description: '',
     speakerIds: [],
   },
   {

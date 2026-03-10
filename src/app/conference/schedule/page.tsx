@@ -65,7 +65,7 @@ export default function Schedule() {
                   item.type !== 'Networking' &&
                   setSelectedSession(item)
                 }
-                className={`group flex flex-col gap-2 rounded-2xl border p-2 transition-all duration-300 md:flex-row md:gap-6 md:p-6 ${
+                className={`group flex flex-col gap-1 rounded-xl border p-3 transition-all duration-300 md:flex-row md:gap-4 md:p-4 ${
                   item.type === 'Break' || item.type === 'Networking'
                     ? 'cursor-default border-transparent bg-gray-50'
                     : 'hover:border-ousac-purple/20 hover:shadow-card cursor-pointer border-gray-100 bg-white'
@@ -102,7 +102,7 @@ export default function Schedule() {
                   </div>
 
                   <h3
-                    className={`font-display w-full mb-2 text-lg font-bold transition-colors md:text-xl ${
+                    className={`font-display w-full mb-1 text-base font-bold transition-colors md:text-lg ${
                       item.type === 'Break' || item.type === 'Networking'
                         ? 'text-gray-500'
                         : 'text-ousac-black group-hover:text-ousac-purple'
@@ -112,7 +112,7 @@ export default function Schedule() {
                   </h3>
 
                   {item.description && item.type !== 'Break' && item.type !== 'Networking' && (
-                    <p className="mb-3 text-sm leading-relaxed text-gray-600 block">
+                    <p className="mb-2 text-xs leading-relaxed text-gray-600 block">
                       {item.description}
                     </p>
                   )}
