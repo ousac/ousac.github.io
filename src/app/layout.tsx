@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ousac.ca'),
   title: 'OUSAC | Ontario Universities Sports Analytics Coalition',
   description:
-    'Join us for the premier student-run sports analytics conference in Ontario. Featuring keynote speakers from pro sports, research presentations, and the annual Data Challenge.',
+    'Join us for the premier student-run sports analytics conference in Ontario. Featuring keynote speakers from pro sports and research presentations.',
   keywords: [
     'Sports Analytics',
     'Conference',

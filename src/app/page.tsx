@@ -38,21 +38,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [keynoteSpeakers.length]);
 
-  // Logic to show/hide the Data Challenge promo based on date (Feb 28, 2026)
-  const [showChallenge, setShowChallenge] = useState(false);
-  useEffect(() => {
-    // Wrap in setTimeout to avoid synchronous state update warning
-    const timer = setTimeout(() => {
-      const today = new Date();
-      // February is month 1 (0-indexed). 28 is the 28th.
-      // Setting threshold to end of day Feb 28, 2026
-      const cutoffDate = new Date('2026-03-01T00:00:00');
-      if (today < cutoffDate) {
-        setShowChallenge(true);
-      }
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="flex min-h-screen flex-col pt-16">
@@ -179,33 +164,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Featured Challenge - Time Sensitive */}
-      {showChallenge && (
-        <section className="bg-gray-900 px-6 py-8 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="rounded-2xl bg-gradient-to-r from-blue-900 to-indigo-900 p-8 shadow-2xl sm:p-10">
-              <div className="mx-auto max-w-2xl text-center">
-                <h2 className="font-display mb-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  MLSE UofTSPAN Data Challenge
-                </h2>
-                <p className="mb-6 text-lg leading-8 text-blue-100">
-                  Analyze exclusive motion capture data from the MLSE Sport
-                  Performance Lab. Submissions open until February 21st.
-                </p>
-                <div className="flex items-center justify-center gap-x-6">
-                  <Link
-                    href="/conference/data-challenge"
-                    className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Featured Speakers Preview (Carousel) */}
 
