@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
-import { GOOGLE_FORM_ABSTRACT } from '@/lib/constants';
 import { BadgeCheck, FileText, Mic, Trophy } from 'lucide-react';
 
 export default function StudentCompetition() {
@@ -21,15 +19,9 @@ export default function StudentCompetition() {
               showcase your work.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href={GOOGLE_FORM_ABSTRACT}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AnimatedShinyButton className="bg-ousac-blue rounded-full px-8 py-3 text-white shadow-lg transition-all hover:bg-blue-700">
-                  Submit Abstract
-                </AnimatedShinyButton>
-              </a>
+              <div className="bg-gray-200 rounded-full px-8 py-3 text-gray-600 font-semibold shadow-inner">
+                Submissions Closed
+              </div>
             </div>
           </div>
         </div>
@@ -60,12 +52,7 @@ export default function StudentCompetition() {
                 Outstanding presentations will be recognized at the conference.
               </p>
               <p>
-                Presentation slots are limited, and abstract submissions are due{' '}
-                <strong className="text-red-600 underline decoration-red-300 underline-offset-4">
-                  February 13, 2026
-                </strong>
-                . Late submissions may not be evaluated. If selected as a
-                presenter, you will be contacted by{' '}
+                <strong>Abstract submissions are now closed.</strong> We thank everyone who submitted their research. If selected as a presenter, you will be contacted by{' '}
                 <strong className="text-ousac-black">February 19</strong> with
                 further details.
               </p>
