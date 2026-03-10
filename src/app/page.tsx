@@ -29,6 +29,10 @@ export default function Home() {
   // State to track the currently displayed speaker index
   const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0);
 
+  // State to conditionally show the registration badge based on the date
+  const [showRegistrationBadge, setShowRegistrationBadge] = useState(true);
+  const [showRegistrationCTA, setShowRegistrationCTA] = useState(true);
+
   // EFFECT: Set up an interval to auto-rotate the speaker carousel every 6 seconds
   useEffect(() => {
     if (keynoteSpeakers.length <= 1) return;
@@ -38,6 +42,23 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [keynoteSpeakers.length]);
 
+  // EFFECT: Check if the date is past March 13, 2026.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const badgeCutoffDate = new Date('2026-03-13T00:00:00-04:00');
+      const ctaCutoffDate = new Date('2026-03-14T00:00:00-04:00');
+      const now = new Date();
+      
+      if (now >= badgeCutoffDate) {
+        setShowRegistrationBadge(false);
+      }
+      
+      if (now >= ctaCutoffDate) {
+        setShowRegistrationCTA(false);
+      }
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col pt-16">
@@ -56,13 +77,15 @@ export default function Home() {
           {/* Text Content */}
           <div>
             {/* Status Badge */}
-            <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
-                <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
-              </span>
-              {SITE_CONTENT.hero.statusBadge}
-            </div>
+            {showRegistrationBadge && (
+              <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
+                </span>
+                {SITE_CONTENT.hero.statusBadge}
+              </div>
+            )}
 
             {/* Main Headline */}
             <h1 className="font-display text-ousac-black mb-6 text-6xl leading-[0.9] font-bold tracking-tight sm:text-7xl lg:text-8xl">
@@ -78,12 +101,14 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col items-start gap-4 sm:flex-row">
-              <AnimatedShinyButton url="/register">
-                {SITE_CONTENT.hero.ctaMain}
-              </AnimatedShinyButton>
+              {showRegistrationCTA && (
+                <AnimatedShinyButton url="/register">
+                  {SITE_CONTENT.hero.ctaMain}
+                </AnimatedShinyButton>
+              )}
               <Link
                 href="/conference/schedule"
-                className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors"
+                className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue hover:bg-gray-50 inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors"
                 // Adjusted padding/rounded to match the Shiny button roughly if needed,
                 // but kept similar specific styles.
                 // Note: Shiny button has specific padding/rounded.
@@ -94,7 +119,7 @@ export default function Home() {
 
             {/* Quick Details - Emphasized */}
             <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <div className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white px-5 py-3 shadow-sm">
+              <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/60 px-5 py-3 shadow-sm backdrop-blur-xl">
                 <div className="text-ousac-purple rounded-lg bg-white p-2 shadow-sm">
                   <Calendar className="h-6 w-6" />
                 </div>
@@ -108,7 +133,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white px-5 py-3 shadow-sm">
+              <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/60 px-5 py-3 shadow-sm backdrop-blur-xl">
                 <div className="text-ousac-purple rounded-lg bg-white p-2 shadow-sm">
                   <MapPin className="h-6 w-6" />
                 </div>
@@ -125,19 +150,19 @@ export default function Home() {
           </div>
 
           {/* Hero Visual - School Logos Grid */}
-          <div className="relative flex h-[350px] items-center justify-center overflow-hidden rounded-3xl bg-white p-8 shadow-2xl shadow-blue-900/10 lg:h-[450px]">
+          <div className="relative flex min-h-[280px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/50 bg-white/60 p-4 shadow-2xl shadow-blue-900/10 backdrop-blur-xl md:min-h-[350px] md:p-6 lg:h-[450px] lg:p-8">
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px] opacity-5"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
 
             <div className="relative z-10 w-full">
-              <p className="mb-10 text-center text-sm font-bold tracking-widest text-gray-400 uppercase">
+              <p className="mb-4 text-center text-xs font-bold tracking-widest text-gray-400 uppercase md:mb-10 md:text-sm">
                 Participating Universities
               </p>
-              <div className="grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-3">
+              <div className="grid grid-cols-2 items-center justify-items-center gap-4 md:grid-cols-3 md:gap-8">
                 {MEMBER_CLUBS.map((club) => (
                   <div
                     key={club.id}
-                    className="relative h-20 w-20 transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 md:h-28 md:w-28 md:opacity-80 md:grayscale"
+                    className="relative h-20 w-20 transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 sm:h-24 sm:w-24 md:h-28 md:w-28 md:opacity-80 md:grayscale"
                   >
                     <Image
                       src={club.universityLogo}
@@ -190,7 +215,7 @@ export default function Home() {
 
             <div className="shadow-card animate-fade-in-up grid gap-0 overflow-hidden rounded-2xl border border-gray-100 lg:grid-cols-2">
               {/* Carousel Image Side */}
-              <div className="relative h-[400px] overflow-hidden bg-gray-200 lg:h-auto">
+              <div className="relative h-72 overflow-hidden bg-gray-200 lg:h-auto">
                 <Image
                   key={currentSpeakerIndex}
                   src={keynoteSpeakers[currentSpeakerIndex].imagePath}
@@ -221,7 +246,7 @@ export default function Home() {
                     </div>
 
                     {keynoteSpeakers[currentSpeakerIndex].companyLogo && (
-                      <div className="relative h-16 w-16 flex-shrink-0 rounded-lg bg-white p-2 shadow-sm md:h-20 md:w-20">
+                      <div className={`relative h-16 w-16 flex-shrink-0 rounded-lg p-2 shadow-sm md:h-20 md:w-20 ${keynoteSpeakers[currentSpeakerIndex].companyLogoDarkBackground ? 'bg-black' : 'bg-white'}`}>
                         <Image
                           src={
                             keynoteSpeakers[currentSpeakerIndex].companyLogo!

@@ -176,6 +176,7 @@ export default function Speakers() {
           title="Featured Speakers & Panelists"
           speakers={featuredSpeakers}
           isComingSoon={!SHOW_SPEAKERS}
+          expandBio
         />
         <Section
           title="Student Presenters"

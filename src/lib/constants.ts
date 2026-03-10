@@ -158,7 +158,8 @@ const ALL_SPEAKERS: Speaker[] = [
     organization: 'SMT',
     bio: 'Dr. Meredith Wills is a Senior Data Scientist and the SMT-U Program Director at SportsMEDIA Technology (SMT). Prior to joining the company in 2018, Wills did astrophysics research, studying the solar corona and the origins of solar storms. In her current role, she is a driving force behind the SMT Data Challenge. In her spare time, Wills does independent research on baseball construction, documenting numerous changes to the Major League baseball over the years. She is an alumna of Harvard University (’96) and has a M.S. (’99) and Ph.D. (’03) in Physics from Montana State University.',
     imagePath: '/img/speakers/meredith_willis.png',
-    companyLogo: '/img/sponsors/smt_logo.webp',
+    companyLogo: '/img/sponsors/smt_logo.png',
+    companyLogoDarkBackground: true,
     category: 'Keynote',
     isKeynote: true,
     isAnnounced: true,
@@ -205,7 +206,7 @@ const ALL_SPEAKERS: Speaker[] = [
     category: 'Featured',
     isKeynote: false,
     isAnnounced: true,
-    socials: {},
+    socials: { linkedin: 'https://www.linkedin.com/in/brendan-kumagai/' },
   },
   {
     id: 'p4',
@@ -218,7 +219,7 @@ const ALL_SPEAKERS: Speaker[] = [
     category: 'Featured',
     isKeynote: false,
     isAnnounced: true,
-    socials: {},
+    socials: { linkedin: 'https://www.linkedin.com/in/mike-heenan/' },
   },
   {
     id: 'c1',

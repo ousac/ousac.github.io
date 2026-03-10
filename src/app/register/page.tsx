@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 
 export default function Register() {
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 pt-16 pb-16 lg:pt-24 lg:pb-24">
+    <div className="bg-gradient-to-b from-white to-blue-50 pt-10 pb-10 lg:pt-24 lg:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Page Header */}
-        <div className="mx-auto mb-16 max-w-4xl text-center">
+        <div className="mx-auto mb-8 max-w-4xl text-center lg:mb-16">
           <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
             Registration
           </span>
           <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl">
             2026 OUSAC Conference Registration
           </h1>
-          <div className="rounded-xl border border-blue-200 bg-white p-8 text-left shadow-sm">
+          <div className="rounded-xl border border-blue-200 bg-white p-5 text-left shadow-sm lg:p-8">
             <p className="mb-4 text-lg leading-relaxed text-gray-700">
               Please fill out this form to register for the 2nd annual OUSAC
               Conference! The conference will take place on{' '}
@@ -57,10 +57,10 @@ export default function Register() {
           </h2>
 
           {/* Ticket Cards Grid */}
-          <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {/* Professional Ticket Card */}
             <div className="hover:border-ousac-blue overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-              <div className="bg-gray-50 p-6 text-center">
+              <div className="bg-gray-50 p-5 text-center md:p-6">
                 <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.regularTicket.name}
                 </p>
@@ -69,7 +69,7 @@ export default function Register() {
                   <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <ul className="mb-6 space-y-3">
                   {TICKET_CONTENT.regularTicket.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
@@ -110,7 +110,7 @@ export default function Register() {
                   {TICKET_CONTENT.studentTicket.badge}
                 </span>
               </div>
-              <div className="from-ousac-gold/10 to-ousac-gold/5 bg-gradient-to-br p-6 text-center">
+              <div className="from-ousac-gold/10 to-ousac-gold/5 bg-gradient-to-br p-5 text-center md:p-6">
                 <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.studentTicket.name}
                 </p>
@@ -119,7 +119,7 @@ export default function Register() {
                   <span className="text-lg text-gray-500">CAD</span>
                 </p>
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <ul className="mb-6 space-y-3">
                   {TICKET_CONTENT.studentTicket.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
@@ -160,7 +160,7 @@ export default function Register() {
                   {TICKET_CONTENT.virtualTicket.badge}
                 </span>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 text-center">
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-5 text-center md:p-6">
                 <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
                   {TICKET_CONTENT.virtualTicket.name}
                 </p>
@@ -168,7 +168,7 @@ export default function Register() {
                   {TICKET_CONTENT.virtualTicket.price}
                 </p>
               </div>
-              <div className="p-6">
+              <div className="p-5 md:p-6">
                 <ul className="mb-6 space-y-3">
                   {TICKET_CONTENT.virtualTicket.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
