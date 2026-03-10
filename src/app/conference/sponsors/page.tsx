@@ -15,7 +15,7 @@ const SPONSORSHIP_PACKAGE_URL =
 
 // Controls display order and logo sizing per tier
 const TIER_CONFIG = {
-  Platinum: 'h-56 w-112 md:h-72 md:w-144',
+  Platinum: 'h-64 w-128 md:h-80 md:w-160',
   Gold: 'h-36 w-72  md:h-44 md:w-96',
   Silver: 'h-20 w-44  md:h-24 md:w-52',
   Bronze: 'h-16 w-36  md:h-20 md:w-44',
@@ -49,7 +49,7 @@ export default function Sponsors() {
                       'relative block',
                       TIER_CONFIG[s.tier],
                       s.darkBackground &&
-                        'h-56 w-56 rounded-xl bg-gray-900 p-6 md:h-72 md:w-72'
+                        'h-64 w-64 rounded-xl bg-black p-4 md:h-80 md:w-80'
                     )}
                   >
                     <Image

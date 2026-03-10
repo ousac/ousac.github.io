@@ -474,7 +474,7 @@ const ALL_SPONSORS: Sponsor[] = [
     tier: 'Platinum',
     logoPath: '/img/sponsors/smt_logo.png',
     website: 'https://smt.com/',
-    isVisible: false,
+    isVisible: true,
     darkBackground: true,
   },
   {
@@ -499,7 +499,7 @@ const ALL_SPONSORS: Sponsor[] = [
     tier: 'In-Kind',
     logoPath: '/img/sponsors/mlse_logo.png',
     website: 'https://www.mlse.com/',
-    isVisible: false,
+    isVisible: true,
   },
   {
     id: 'sp5',
@@ -507,7 +507,7 @@ const ALL_SPONSORS: Sponsor[] = [
     tier: 'In-Kind',
     logoPath: '/img/sponsors/toronto_bluejays_logo.png',
     website: 'https://www.mlb.com/bluejays',
-    isVisible: false,
+    isVisible: true,
   },
 ];
 

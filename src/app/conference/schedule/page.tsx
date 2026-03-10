@@ -35,7 +35,7 @@ export default function Schedule() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-20">
+    <div className="min-h-screen bg-white pt-16 pb-12 md:pt-24 md:pb-20">
       {/* Page Header */}
       <div className="animate-fade-in-up mx-auto mb-8 max-w-4xl px-6 text-center">
         <h1 className="font-display text-ousac-black mb-4 text-4xl font-bold md:text-5xl">
@@ -55,7 +55,7 @@ export default function Schedule() {
             </div>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-2 md:space-y-4">
             {SCHEDULE.map((item) => (
               <div
                 key={item.id}
@@ -65,7 +65,7 @@ export default function Schedule() {
                   item.type !== 'Networking' &&
                   setSelectedSession(item)
                 }
-                className={`group flex flex-col gap-3 rounded-2xl border p-3 transition-all duration-300 md:flex-row md:gap-6 md:p-6 ${
+                className={`group flex flex-col gap-2 rounded-2xl border p-2 transition-all duration-300 md:flex-row md:gap-6 md:p-6 ${
                   item.type === 'Break' || item.type === 'Networking'
                     ? 'cursor-default border-transparent bg-gray-50'
                     : 'hover:border-ousac-purple/20 hover:shadow-card cursor-pointer border-gray-100 bg-white'
@@ -102,7 +102,7 @@ export default function Schedule() {
                   </div>
 
                   <h3
-                    className={`font-display mb-2 text-lg font-bold transition-colors md:text-xl ${
+                    className={`font-display w-full mb-2 text-lg font-bold transition-colors md:text-xl ${
                       item.type === 'Break' || item.type === 'Networking'
                         ? 'text-gray-500'
                         : 'text-ousac-black group-hover:text-ousac-purple'
@@ -110,6 +110,12 @@ export default function Schedule() {
                   >
                     {item.title}
                   </h3>
+
+                  {item.description && item.type !== 'Break' && item.type !== 'Networking' && (
+                    <p className="mb-3 text-sm leading-relaxed text-gray-600 block">
+                      {item.description}
+                    </p>
+                  )}
 
                   {item.location && (
                     <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Register() {
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 pt-24 pb-24">
+    <div className="bg-gradient-to-b from-white to-blue-50 pt-16 pb-16 lg:pt-24 lg:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Page Header */}
         <div className="mx-auto mb-16 max-w-4xl text-center">
@@ -57,7 +57,7 @@ export default function Register() {
           </h2>
 
           {/* Ticket Cards Grid */}
-          <div className="mb-12 grid gap-8 md:grid-cols-3">
+          <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Professional Ticket Card */}
             <div className="hover:border-ousac-blue overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
               <div className="bg-gray-50 p-6 text-center">

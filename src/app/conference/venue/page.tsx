@@ -10,7 +10,7 @@ import { MapPin, Car, Train } from 'lucide-react';
 export default function Venue() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="grid h-[calc(100vh-80px)] md:grid-cols-2">
+      <div className="min-h-[calc(100vh-80px)] flex flex-col md:grid md:grid-cols-2">
         {/* Left Column: Logistics Info */}
         <div className="order-2 flex flex-col justify-center bg-gray-50 p-8 md:order-1 md:p-16">
           <h1 className="font-display mb-6 text-4xl font-bold text-gray-900">
@@ -26,6 +26,7 @@ export default function Venue() {
                 <h3 className="text-xl font-bold text-gray-900">
                   University of Toronto
                 </h3>
+                <p className="font-semibold text-ousac-blue mb-1">Room BA 1160</p>
                 <p className="text-gray-600">
                   Bahen Centre for Information Technology
                 </p>
