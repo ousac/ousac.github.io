@@ -20,6 +20,7 @@ import {
   Handshake,
   MapPin,
   Trophy,
+  Database,
 } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -32,6 +33,11 @@ const Navbar: React.FC = () => {
       label: 'Student Competition',
       href: '/conference/student-competition',
       icon: Trophy,
+    },
+    {
+      label: 'Data Challenge',
+      href: '/conference/data-challenge',
+      icon: Database,
     },
   ];
 
