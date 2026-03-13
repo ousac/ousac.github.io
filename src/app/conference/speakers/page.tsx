@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { SPEAKERS, SHOW_SPEAKERS } from '@/lib/constants';
-import { Linkedin, Twitter, Globe, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Speaker } from '@/types/types';
 
 // ... SpeakerCard and Section components ...
@@ -16,50 +16,14 @@ const SpeakerCard = ({
   expandBio?: boolean;
 }) => (
   <div className="group flex flex-col">
-    {/* Image Container - Aspect Ratio 4:5 */}
-    <div className="relative mb-6 aspect-4/3 overflow-hidden rounded-sm bg-gray-100 md:aspect-4/3">
+    {/* Image Container - Aspect Ratio 1:1 */}
+    <div className="relative mb-4 aspect-square scale-75 overflow-hidden rounded-sm bg-gray-100">
       <Image
         src={speaker.imagePath}
         alt={`${speaker.firstName} ${speaker.lastName}`}
         fill
-        className="object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 md:grayscale"
+        className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
       />
-
-      {/* Socials Overlay - Slides up on group hover */}
-      <div className="from-ousac-black/80 absolute inset-0 flex items-end bg-gradient-to-t via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <div className="flex translate-y-4 gap-4 transition-transform duration-300 group-hover:translate-y-0">
-          {speaker.socials.linkedin && (
-            <a
-              href={speaker.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ousac-gold text-white transition-colors"
-            >
-              <Linkedin className="h-5 w-5" strokeWidth={1.5} />
-            </a>
-          )}
-          {speaker.socials.twitter && (
-            <a
-              href={speaker.socials.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ousac-gold text-white transition-colors"
-            >
-              <Twitter className="h-5 w-5" strokeWidth={1.5} />
-            </a>
-          )}
-          {speaker.socials.website && (
-            <a
-              href={speaker.socials.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ousac-gold text-white transition-colors"
-            >
-              <Globe className="h-5 w-5" strokeWidth={1.5} />
-            </a>
-          )}
-        </div>
-      </div>
     </div>
 
     {/* Speaker Info */}
@@ -85,12 +49,16 @@ const Section = ({
   defaultOpen = true,
   isComingSoon = false,
   expandBio = false,
+  threeColumn = false,
+  smallTwoColumn = false,
 }: {
   title: string;
   speakers: Speaker[];
   defaultOpen?: boolean;
   isComingSoon?: boolean;
   expandBio?: boolean;
+  threeColumn?: boolean;
+  smallTwoColumn?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -130,7 +98,15 @@ const Section = ({
             </div>
           ) : (
             <div
-              className={`grid grid-cols-1 gap-x-8 gap-y-12 pt-8 md:gap-y-16 ${expandBio ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'}`}
+              className={`grid gap-y-8 pt-8 md:gap-y-10 ${
+                smallTwoColumn
+                  ? 'grid-cols-1 gap-x-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4'
+                  : threeColumn
+                    ? 'grid-cols-1 gap-x-4 md:grid-cols-2 lg:grid-cols-3'
+                    : expandBio
+                      ? 'grid-cols-1 gap-x-6 md:grid-cols-2 xl:grid-cols-4'
+                      : 'grid-cols-1 gap-x-6 md:grid-cols-2 xl:grid-cols-4'
+              }`}
             >
               {speakers.map((speaker) => (
                 <SpeakerCard
@@ -171,6 +147,7 @@ export default function Speakers() {
           speakers={keynoteSpeakers}
           isComingSoon={!SHOW_SPEAKERS}
           expandBio
+          threeColumn
         />
         <Section
           title="Featured Speakers & Panelists"
@@ -182,6 +159,7 @@ export default function Speakers() {
           title="Student Presenters"
           speakers={studentSpeakers}
           isComingSoon={!SHOW_SPEAKERS}
+          smallTwoColumn
         />
       </div>
     </div>

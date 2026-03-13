@@ -109,7 +109,6 @@ export const SITE_CONTENT = {
   },
 };
 
-
 // ----------------------------------------------------------------------
 // DATA COLLECTIONS
 // ----------------------------------------------------------------------
@@ -174,10 +173,10 @@ const ALL_SPEAKERS: Speaker[] = [
     role: 'Assistant Professor',
     organization: 'University of Waterloo',
     bio: 'Leader in sports analytics education and co-founder of UWAGGS.',
-    imagePath: '/img/ousac_logo.png',
+    imagePath: '/img/speakers/jack_davis.png',
     category: 'Featured',
     isKeynote: false,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: {},
   },
   {
@@ -231,8 +230,151 @@ const ALL_SPEAKERS: Speaker[] = [
     imagePath: '/img/speakers/oj_adeyemi.jpg',
     category: 'Student',
     isKeynote: false,
-    isAnnounced: false,
+    isAnnounced: true,
     socials: { linkedin: 'https://www.linkedin.com/in/ojadeyemi/' },
+  },
+  {
+    id: 'c2',
+    firstName: 'Amin',
+    lastName: 'Nabavi',
+    role: 'PhD Student',
+    organization: 'Carleton University',
+    bio: 'Amin Nabavi is a PhD student at Carleton University, where his research focuses on multi-modal learning for basketball player performance analysis. His work combines computer vision and biomechanics to analyze shot trajectories from video footage.',
+    imagePath: '/img/speakers/amin_nabavi.jpg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c3',
+    firstName: 'Shun',
+    lastName: 'Chen',
+    role: 'MSc. Biomechanics Student',
+    organization: 'University of Western Ontario',
+    bio: 'Shun is a Master’s student in Biomechanics with a long-standing interest in studying human movement from a rational and analytical perspective. His work focuses particularly on sprinting, with more recent research interests expanding into baseball.',
+    imagePath: '/img/speakers/shun_chen.jpeg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c4',
+    firstName: 'Fauzan',
+    lastName: 'Lodhi',
+    role: "University of Waterloo (BMATH '26)",
+    organization: 'University of Waterloo',
+    bio: "Fauzan Lodhi is a 4th year undergrad student at the University of Waterloo, majoring in Stats. Fauzan is currently the data analytics manager with Waterloo Varsity Men's Basketball and has previously worked as an undergrad research associate in hockey analytics.",
+    imagePath: '/img/speakers/fauzan_lodhi.png',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c5',
+    firstName: 'Pierre',
+    lastName: 'Aucoin',
+    role: 'MMath Data Science Student',
+    organization: 'University of Waterloo',
+    bio: 'Pierre Aucoin is a member of the University of Waterloo Analytics Group for Games and Sports (UWAGGS), working on sports analytics research and software engineering for varsity athletics.',
+    imagePath: '/img/speakers/pierre_aucoin.png',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c12',
+    firstName: 'Shamar',
+    lastName: 'Phillips',
+    role: 'BMath, Combinatorics & Optimization Student',
+    organization: 'University of Waterloo',
+    bio: 'Shamar Phillips is an undergraduate student focusing on sports analytics and infrastructure engineering as a member of the University of Waterloo Analytics Group for Games and Sports (UWAGGS).',
+    imagePath: '/img/speakers/shamar_phillips.png',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c6',
+    firstName: 'Sheraz',
+    lastName: 'Arshad',
+    role: 'Founder, PhysioMotion AI',
+    organization: 'McMaster University',
+    bio: 'Sheraz is a Mathematics and Statistics researcher at McMaster University and the founder of PhysioMotion AI, a startup leveraging computer vision for physical rehabilitation.',
+    imagePath: '/img/speakers/sheraz_arshad.png',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c7',
+    firstName: 'Elliot',
+    lastName: 'Sones',
+    role: 'Student',
+    organization: 'Toronto Metropolitan University',
+    bio: 'Elliot Sones is a computer science student at Toronto Metropolitan University.',
+    imagePath: '/img/speakers/elliot_sones.jpeg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c8',
+    firstName: 'Dimitri',
+    lastName: 'Christakis',
+    role: 'Engineering Student',
+    organization: "Queen's University",
+    bio: 'Dimitri Christakis is a first-year engineering student at Queen’s University focused on hockey analytics, including advanced valuation of shot outcomes and opportunity costs of puck possession.',
+    imagePath: '/img/speakers/dimitri_christakis.jpg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c9',
+    firstName: 'Luke',
+    lastName: 'Blommesteyn',
+    role: 'Software Engineering Student',
+    organization: 'Western University',
+    bio: 'Luke Blommesteyn is a final-year software engineering student at Western University with experience across MLSE, Lyft, and Beats by Dre. He loves solving interesting problems, building side projects, and staying active.',
+    imagePath: '/img/speakers/luke_blommesteyn.jpeg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c10',
+    firstName: 'Yuvraj',
+    lastName: 'Sharma',
+    role: 'Student',
+    organization: 'Western University',
+    bio: 'Yuvraj Sharma is a student at Western University.',
+    imagePath: '/img/speakers/yuvraj_sharma.jpg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
+  },
+  {
+    id: 'c11',
+    firstName: 'Nathan',
+    lastName: 'Feng',
+    role: 'Computer Science Student',
+    organization: 'Western University',
+    bio: 'Nathan Feng is a second-year Computer Science student at Western University and founder of a campus volleyball club.',
+    imagePath: '/img/speakers/nathan_feng.jpeg',
+    category: 'Student',
+    isKeynote: false,
+    isAnnounced: true,
+    socials: {},
   },
 ];
 
@@ -271,7 +413,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Keynote',
 
     description: 'Keynote Address.',
-    speakerIds: [],
+    speakerIds: ['s1'],
   },
   {
     id: 'sch4',
@@ -282,7 +424,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c1'],
   },
   {
     id: 'sch5',
@@ -302,7 +444,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Keynote',
 
     description: 'Industry Panel Discussion.',
-    speakerIds: [],
+    speakerIds: ['p2', 'p4', 'p3', 'p1'],
   },
   {
     id: 'sch7',
@@ -322,7 +464,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Keynote',
 
     description: 'Keynote Address.',
-    speakerIds: [],
+    speakerIds: ['s3'],
   },
   {
     id: 'sch9',
@@ -333,7 +475,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c7'],
   },
   {
     id: 'sch10',
@@ -344,7 +486,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c2'],
   },
   {
     id: 'sch11',
@@ -355,7 +497,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c9'],
   },
   {
     id: 'sch12',
@@ -376,7 +518,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c8'],
   },
   {
     id: 'sch14',
@@ -387,7 +529,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c5', 'c12'],
   },
   {
     id: 'sch15',
@@ -398,7 +540,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c6'],
   },
   {
     id: 'sch16',
@@ -409,7 +551,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c4'],
   },
   {
     id: 'sch17',
@@ -420,7 +562,7 @@ export const SCHEDULE: ScheduleItem[] = [
     track: 'Technical',
 
     description: '',
-    speakerIds: [],
+    speakerIds: ['c3'],
   },
   {
     id: 'sch18',
@@ -440,7 +582,7 @@ export const SCHEDULE: ScheduleItem[] = [
     type: 'Keynote',
 
     description: 'Closing Keynote Address.',
-    speakerIds: [],
+    speakerIds: ['s2'],
   },
   {
     id: 'sch20',
