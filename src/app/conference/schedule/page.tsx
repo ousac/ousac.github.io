@@ -102,7 +102,7 @@ export default function Schedule() {
                   </div>
 
                   <h3
-                    className={`font-display w-full mb-1 text-base font-bold transition-colors md:text-lg ${
+                    className={`font-display mb-1 w-full text-base font-bold transition-colors md:text-lg ${
                       item.type === 'Break' || item.type === 'Networking'
                         ? 'text-gray-500'
                         : 'text-ousac-black group-hover:text-ousac-purple'
@@ -111,11 +111,13 @@ export default function Schedule() {
                     {item.title}
                   </h3>
 
-                  {item.description && item.type !== 'Break' && item.type !== 'Networking' && (
-                    <p className="mb-2 text-xs leading-relaxed text-gray-600 block">
-                      {item.description}
-                    </p>
-                  )}
+                  {item.description &&
+                    item.type !== 'Break' &&
+                    item.type !== 'Networking' && (
+                      <p className="mb-2 block text-xs leading-relaxed text-gray-600">
+                        {item.description}
+                      </p>
+                    )}
 
                   {item.location && (
                     <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">

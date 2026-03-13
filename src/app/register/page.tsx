@@ -57,7 +57,7 @@ export default function Register() {
           </h2>
 
           {/* Ticket Cards Grid */}
-          <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+          <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {/* Professional Ticket Card */}
             <div className="hover:border-ousac-blue overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
               <div className="bg-gray-50 p-5 text-center md:p-6">

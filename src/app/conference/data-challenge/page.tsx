@@ -4,15 +4,16 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Data Challenge Finalists | OUSAC',
-  description: 'Come see the MLSE UofTSPAN Data Challenge finalists present their work at OUSAC 2026.',
+  description:
+    'Come see the MLSE UofTSPAN Data Challenge finalists present their work at OUSAC 2026.',
 };
 
 export default function DataChallengePage() {
   return (
-    <div className="bg-white pt-20 pb-16 sm:pt-32 sm:pb-24 min-h-screen">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+    <div className="min-h-screen bg-white pt-20 pb-16 sm:pt-32 sm:pb-24">
+      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         {/* Logos Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
+        <div className="mb-10 flex flex-col items-center justify-center gap-6 sm:mb-12 sm:flex-row sm:gap-8">
           <Image
             src="/img/sponsors/mlse_logo.png"
             alt="MLSE Sport Performance Lab"
@@ -20,7 +21,7 @@ export default function DataChallengePage() {
             height={80}
             className="object-contain"
           />
-          <span className="text-gray-300 text-3xl hidden sm:block">×</span>
+          <span className="hidden text-3xl text-gray-300 sm:block">×</span>
           <Image
             src="/img/clubs/utspan_logo.webp"
             alt="UofTSPAN"
@@ -31,34 +32,39 @@ export default function DataChallengePage() {
         </div>
 
         {/* Header Section */}
-        <h2 className="text-sm sm:text-base font-semibold leading-7 text-indigo-600 tracking-wide uppercase">
+        <h2 className="text-sm leading-7 font-semibold tracking-wide text-indigo-600 uppercase sm:text-base">
           Data Challenge 2026
         </h2>
-        <h1 className="mt-2 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 font-display mb-6 sm:mb-8 leading-tight">
+        <h1 className="font-display mt-2 mb-6 text-3xl leading-tight font-bold tracking-tight text-gray-900 sm:mt-4 sm:mb-8 sm:text-4xl md:text-5xl lg:text-6xl">
           The Finalists Present
         </h1>
-        
-        <p className="text-lg sm:text-xl leading-relaxed sm:leading-8 text-gray-600 mb-10 sm:mb-12 px-2 sm:px-0">
-          The MLSE x UofTSPAN Data Challenge submission period has ended. Thank you to everyone who participated in analyzing our markerless motion capture data for basketball shot outcomes!
+
+        <p className="mb-10 px-2 text-lg leading-relaxed text-gray-600 sm:mb-12 sm:px-0 sm:text-xl sm:leading-8">
+          The MLSE x UofTSPAN Data Challenge submission period has ended. Thank
+          you to everyone who participated in analyzing our markerless motion
+          capture data for basketball shot outcomes!
         </p>
 
         {/* Simple Call to Action Container */}
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 sm:p-12 mb-10 sm:mb-12">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+        <div className="mb-10 rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:mb-12 sm:p-12">
+          <h3 className="mb-3 text-xl font-bold text-gray-900 sm:mb-4 sm:text-2xl">
             Join the Audience
           </h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed">
-            We invite everyone to attend the OUSAC 2026 conference on March 14, 2026, to watch the top 3 finalists present their predictive models live to MLSE and academic experts.
+          <p className="mx-auto mb-6 max-w-lg text-sm leading-relaxed text-gray-600 sm:mb-8 sm:text-base">
+            We invite everyone to attend the OUSAC 2026 conference on March 14,
+            2026, to watch the top 3 finalists present their predictive models
+            live to MLSE and academic experts.
           </p>
-          
+
           <Link
             href="/register"
-            className="inline-flex justify-center items-center rounded-full bg-indigo-600 px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all w-full sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base"
           >
             Get Conference Tickets
           </Link>
-          <p className="mt-4 text-xs sm:text-sm text-gray-500 px-2 sm:px-0">
-            Tickets grant access to the entire conference, including all presentations and keynotes.
+          <p className="mt-4 px-2 text-xs text-gray-500 sm:px-0 sm:text-sm">
+            Tickets grant access to the entire conference, including all
+            presentations and keynotes.
           </p>
         </div>
       </div>

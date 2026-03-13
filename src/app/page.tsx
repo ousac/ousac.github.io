@@ -48,11 +48,11 @@ export default function Home() {
       const badgeCutoffDate = new Date('2026-03-13T00:00:00-04:00');
       const ctaCutoffDate = new Date('2026-03-14T00:00:00-04:00');
       const now = new Date();
-      
+
       if (now >= badgeCutoffDate) {
         setShowRegistrationBadge(false);
       }
-      
+
       if (now >= ctaCutoffDate) {
         setShowRegistrationCTA(false);
       }
@@ -108,7 +108,7 @@ export default function Home() {
               )}
               <Link
                 href="/conference/schedule"
-                className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue hover:bg-gray-50 inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors"
+                className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-gray-50"
                 // Adjusted padding/rounded to match the Shiny button roughly if needed,
                 // but kept similar specific styles.
                 // Note: Shiny button has specific padding/rounded.
@@ -246,7 +246,9 @@ export default function Home() {
                     </div>
 
                     {keynoteSpeakers[currentSpeakerIndex].companyLogo && (
-                      <div className={`relative h-16 w-16 flex-shrink-0 rounded-lg p-2 shadow-sm md:h-20 md:w-20 ${keynoteSpeakers[currentSpeakerIndex].companyLogoDarkBackground ? 'bg-black' : 'bg-white'}`}>
+                      <div
+                        className={`relative h-16 w-16 flex-shrink-0 rounded-lg p-2 shadow-sm md:h-20 md:w-20 ${keynoteSpeakers[currentSpeakerIndex].companyLogoDarkBackground ? 'bg-black' : 'bg-white'}`}
+                      >
                         <Image
                           src={
                             keynoteSpeakers[currentSpeakerIndex].companyLogo!

@@ -19,7 +19,7 @@ export default function StudentCompetition() {
               showcase your work.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <div className="bg-gray-200 rounded-full px-8 py-3 text-gray-600 font-semibold shadow-inner">
+              <div className="rounded-full bg-gray-200 px-8 py-3 font-semibold text-gray-600 shadow-inner">
                 Submissions Closed
               </div>
             </div>
@@ -52,7 +52,9 @@ export default function StudentCompetition() {
                 Outstanding presentations will be recognized at the conference.
               </p>
               <p>
-                <strong>Abstract submissions are now closed.</strong> We thank everyone who submitted their research. If selected as a presenter, you will be contacted by{' '}
+                <strong>Abstract submissions are now closed.</strong> We thank
+                everyone who submitted their research. If selected as a
+                presenter, you will be contacted by{' '}
                 <strong className="text-ousac-black">February 19</strong> with
                 further details.
               </p>
