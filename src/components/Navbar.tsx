@@ -22,6 +22,7 @@ import {
   Trophy,
   Database,
 } from 'lucide-react';
+import { SITE_CONTENT } from '@/lib/constants';
 
 const Navbar: React.FC = () => {
   const CONFERENCE_ITEMS = [
@@ -58,11 +59,12 @@ const Navbar: React.FC = () => {
               <NavDropdown label="Conference" items={CONFERENCE_ITEMS} />
               <NavItems items={MAIN_NAV_ITEMS} />
               <div className="ml-4">
-                <a href="/register">
-                  <AnimatedShinyButton className="rounded-full !px-6 !py-2">
-                    Register
-                  </AnimatedShinyButton>
-                </a>
+                <AnimatedShinyButton
+                  url={SITE_CONTENT.socials.instagram}
+                  className="rounded-full !px-6 !py-2"
+                >
+                  Instagram
+                </AnimatedShinyButton>
               </div>
             </div>
           </NavBody>
@@ -107,11 +109,12 @@ const Navbar: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <a href="/register">
-                  <AnimatedShinyButton className="w-full justify-center rounded-full !px-8 !py-3">
-                    Register
-                  </AnimatedShinyButton>
-                </a>
+                <AnimatedShinyButton
+                  url={SITE_CONTENT.socials.instagram}
+                  className="w-full justify-center rounded-full !px-8 !py-3"
+                >
+                  Instagram
+                </AnimatedShinyButton>
               </div>
             </MobileNavMenu>
           </MobileNav>

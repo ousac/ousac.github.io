@@ -1,222 +1,54 @@
-import { TICKET_CONTENT, STRIPE_PAYMENT_LINKS } from '@/lib/constants';
+import Link from 'next/link';
 import type { Metadata } from 'next';
+import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
+import { SITE_CONTENT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Register | OUSAC 2026',
+  title: 'OUSAC 2026 Is Over | OUSAC',
   description:
-    'Register for the 2nd annual OUSAC Conference on March 14, 2026 at the University of Toronto.',
+    'OUSAC 2026 has wrapped. Follow @ousacsportsanalytics on Instagram for OUSAC 2027 updates.',
 };
 
-export default function Register() {
+export default function RegisterPage() {
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 pt-10 pb-10 lg:pt-24 lg:pb-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Page Header */}
-        <div className="mx-auto mb-8 max-w-4xl text-center lg:mb-16">
-          <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
-            Registration
+    <div className="bg-gradient-to-b from-white to-blue-50 pt-20 pb-20 lg:pt-28 lg:pb-28">
+      <div className="mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="rounded-[2rem] border border-blue-100 bg-white p-8 text-center shadow-xl shadow-blue-900/5 sm:p-12">
+          <span className="text-ousac-blue mb-4 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
+            Conference Update
           </span>
-          <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl">
-            2026 OUSAC Conference Registration
+
+          <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
+            OUSAC 2026 is over!
           </h1>
-          <div className="rounded-xl border border-blue-200 bg-white p-5 text-left shadow-sm lg:p-8">
-            <p className="mb-4 text-lg leading-relaxed text-gray-700">
-              Please fill out this form to register for the 2nd annual OUSAC
-              Conference! The conference will take place on{' '}
-              <strong>Saturday, March 14, 2026 from 9 AM - 5 PM</strong> at the{' '}
-              <strong>University of Toronto</strong>.
-            </p>
-            <p className="mb-4 text-gray-600">
-              There will be a series of invited talks, a panel discussion,
-              student presentations, and data challenge showcases. Registration
-              is limited.
-            </p>
-            <p className="mb-4 text-gray-600">
-              Questions and suggestions can be sent to{' '}
-              <a
-                href="mailto:info.ousac@gmail.com"
-                className="text-ousac-blue font-semibold hover:underline"
-              >
-                info.ousac@gmail.com
-              </a>
-              .
-            </p>
-            <div className="rounded-lg bg-red-50 p-4">
-              <p className="text-sm font-semibold text-red-800">
-                ⏰ The deadline for in-person registration is{' '}
-                <strong>Wednesday, March 11 at 11:59 PM ET</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
 
-        {/* Ticket Selection Section */}
-        <div className="mx-auto max-w-7xl">
-          <h2 className="font-display mb-8 text-center text-3xl font-bold text-gray-900">
-            Select Your Ticket
-          </h2>
+          <p className="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-gray-700">
+            Thanks to everyone who joined us at the University of Toronto on
+            March 14, 2026. Follow us on Instagram @ousacsportsanalytics to stay
+            tuned for OUSAC 2027.
+          </p>
 
-          {/* Ticket Cards Grid */}
-          <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-            {/* Professional Ticket Card */}
-            <div className="hover:border-ousac-blue overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-              <div className="bg-gray-50 p-5 text-center md:p-6">
-                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
-                  {TICKET_CONTENT.regularTicket.name}
-                </p>
-                <p className="text-ousac-blue text-5xl font-bold">
-                  {TICKET_CONTENT.regularTicket.price}{' '}
-                  <span className="text-lg text-gray-500">CAD</span>
-                </p>
-              </div>
-              <div className="p-5 md:p-6">
-                <ul className="mb-6 space-y-3">
-                  {TICKET_CONTENT.regularTicket.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex-shrink-0">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
-                          <svg
-                            className="h-3 w-3 text-green-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={STRIPE_PAYMENT_LINKS.regularTicket}
-                  className="bg-ousac-blue hover:bg-ousac-blue/90 block w-full rounded-lg py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:shadow-md"
-                >
-                  Register as Professional
-                </a>
-              </div>
-            </div>
+          <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-gray-500 sm:text-base">
+            Questions can still be sent to{' '}
+            <a
+              href="mailto:info.ousac@gmail.com"
+              className="text-ousac-blue font-semibold hover:underline"
+            >
+              info.ousac@gmail.com
+            </a>
+            .
+          </p>
 
-            {/* Student Ticket Card */}
-            <div className="border-ousac-gold relative overflow-hidden rounded-2xl border-2 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-              <div className="bg-ousac-gold absolute top-4 right-4 z-10 rounded-full px-4 py-1.5">
-                <span className="text-xs font-bold text-white uppercase">
-                  {TICKET_CONTENT.studentTicket.badge}
-                </span>
-              </div>
-              <div className="from-ousac-gold/10 to-ousac-gold/5 bg-gradient-to-br p-5 text-center md:p-6">
-                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
-                  {TICKET_CONTENT.studentTicket.name}
-                </p>
-                <p className="text-ousac-blue text-5xl font-bold">
-                  {TICKET_CONTENT.studentTicket.price}{' '}
-                  <span className="text-lg text-gray-500">CAD</span>
-                </p>
-              </div>
-              <div className="p-5 md:p-6">
-                <ul className="mb-6 space-y-3">
-                  {TICKET_CONTENT.studentTicket.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex-shrink-0">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
-                          <svg
-                            className="h-3 w-3 text-green-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={STRIPE_PAYMENT_LINKS.studentTicket}
-                  className="bg-ousac-blue hover:bg-ousac-blue/90 block w-full rounded-lg py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:shadow-md"
-                >
-                  Register as Student
-                </a>
-              </div>
-            </div>
-
-            {/* Virtual Ticket Card */}
-            <div className="relative overflow-hidden rounded-2xl border-2 border-green-500 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-              <div className="absolute top-4 right-4 z-10 rounded-full bg-green-500 px-4 py-1.5">
-                <span className="text-xs font-bold text-white uppercase">
-                  {TICKET_CONTENT.virtualTicket.badge}
-                </span>
-              </div>
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-5 text-center md:p-6">
-                <p className="mb-2 text-sm font-semibold tracking-wider text-gray-500 uppercase">
-                  {TICKET_CONTENT.virtualTicket.name}
-                </p>
-                <p className="text-ousac-blue text-5xl font-bold">
-                  {TICKET_CONTENT.virtualTicket.price}
-                </p>
-              </div>
-              <div className="p-5 md:p-6">
-                <ul className="mb-6 space-y-3">
-                  {TICKET_CONTENT.virtualTicket.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex-shrink-0">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
-                          <svg
-                            className="h-3 w-3 text-green-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                {TICKET_CONTENT.virtualTicket.note && (
-                  <div className="mb-4 rounded-lg bg-yellow-50 p-3">
-                    <p className="text-xs text-yellow-800">
-                      ⚠️ {TICKET_CONTENT.virtualTicket.note}
-                    </p>
-                  </div>
-                )}
-                <a
-                  href={STRIPE_PAYMENT_LINKS.virtualTicket}
-                  className="block w-full rounded-lg bg-green-600 py-4 text-center text-sm font-bold tracking-wider text-white uppercase transition-all hover:bg-green-700 hover:shadow-md"
-                >
-                  Register for Virtual
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Information */}
-          <div className="rounded-xl border border-blue-200 bg-white p-6 text-center">
-            <p className="text-sm text-gray-600">
-              After clicking your ticket type, you&apos;ll be redirected to a
-              secure checkout page where you&apos;ll provide your information
-              and complete registration.
-            </p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <AnimatedShinyButton url={SITE_CONTENT.socials.instagram}>
+              Follow on Instagram
+            </AnimatedShinyButton>
+            <Link
+              href="/past-conferences"
+              className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-gray-50"
+            >
+              Past Conferences
+            </Link>
           </div>
         </div>
       </div>
