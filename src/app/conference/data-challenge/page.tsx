@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { SITE_CONTENT } from '@/lib/constants';
 
 export const metadata = {
   title: 'Data Challenge Finalists | OUSAC',
   description:
-    'Come see the MLSE UofTSPAN Data Challenge finalists present their work at OUSAC 2026.',
+    'Highlights from the MLSE x UofTSPAN Data Challenge at OUSAC 2026.',
 };
 
 export default function DataChallengePage() {
@@ -48,23 +48,22 @@ export default function DataChallengePage() {
         {/* Simple Call to Action Container */}
         <div className="mb-10 rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:mb-12 sm:p-12">
           <h3 className="mb-3 text-xl font-bold text-gray-900 sm:mb-4 sm:text-2xl">
-            Join the Audience
+            OUSAC 2026 is over!
           </h3>
           <p className="mx-auto mb-6 max-w-lg text-sm leading-relaxed text-gray-600 sm:mb-8 sm:text-base">
-            We invite everyone to attend the OUSAC 2026 conference on March 14,
-            2026, to watch the top 3 finalists present their predictive models
-            live to MLSE and academic experts.
+            Thanks to everyone who joined us to watch the finalists present
+            live. Follow us on Instagram @ousacsportsanalytics to stay tuned for
+            OUSAC 2027.
           </p>
 
-          <Link
-            href="/register"
+          <a
+            href={SITE_CONTENT.socials.instagram}
             className="inline-flex w-full items-center justify-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base"
           >
-            Get Conference Tickets
-          </Link>
+            Follow @ousacsportsanalytics
+          </a>
           <p className="mt-4 px-2 text-xs text-gray-500 sm:px-0 sm:text-sm">
-            Tickets grant access to the entire conference, including all
-            presentations and keynotes.
+            We&apos;ll post OUSAC 2027 updates there first.
           </p>
         </div>
       </div>

@@ -16,76 +16,18 @@ export const SHOW_SPEAKERS = true;
 export const SHOW_SPONSORS = true;
 export const SHOW_SCHEDULE = true;
 
-// Stripe Payment Links (created in Stripe Dashboard)
-export const STRIPE_PAYMENT_LINKS = {
-  regularTicket: 'https://buy.stripe.com/fZueVe4Nffp5cwe8zR9Ve00',
-  studentTicket: 'https://buy.stripe.com/14A7sM5Rj5OvdAi2bt9Ve01',
-  virtualTicket: 'https://buy.stripe.com/28EdRa6Vnel10Nw5nF9Ve02',
-};
-
-export const TICKET_CONTENT = {
-  section: {
-    title: 'Get Your Ticket',
-    subtitle: 'Join us for an unforgettable day of sports analytics',
-    description:
-      'Secure your spot at OUSAC 2026. Choose between in-person attendance or virtual streaming. In-person tickets include catered lunch and networking opportunities.',
-  },
-  regularTicket: {
-    name: 'In-Person - Professional',
-    price: '$10',
-    features: [
-      'In-person attendance at UofT',
-      'Full conference access',
-      'Keynote presentations from industry leaders',
-      'Panel discussions and Q&A sessions',
-      'Student research presentations',
-      'Networking opportunities',
-      'Catered lunch included',
-    ],
-  },
-  studentTicket: {
-    name: 'In-Person - Student',
-    price: '$5',
-    badge: 'Student Discount',
-    features: [
-      'In-person attendance at UofT',
-      'Full conference access',
-      'Keynote presentations from industry leaders',
-      'Panel discussions and Q&A sessions',
-      'Student research presentations',
-      'Networking opportunities',
-      'Catered lunch included',
-    ],
-    honorSystemNote:
-      'This ticket operates on an honor system. No student verification required.',
-  },
-  virtualTicket: {
-    name: 'Virtual Attendance',
-    price: 'Free',
-    badge: 'Remote',
-    features: [
-      'Live stream access to all keynotes',
-      'Live stream of panel discussions',
-      'Access to student presentations',
-      'Q&A participation via chat',
-      'Digital conference materials',
-    ],
-    note: 'Virtual ticket does not grant in-person entry. You must purchase an in-person ticket to attend physically.',
-  },
-};
-
 export const SITE_CONTENT = {
   navbar: {
     title: 'OUSAC',
     logoAlt: 'OUSAC Logo',
   },
   hero: {
-    statusBadge: 'Registration Open',
-    headlinePrefix: 'Data Driven.',
-    headlineSuffix: 'Game Changing.',
+    statusBadge: 'Conference Update',
+    headlinePrefix: 'OUSAC 2026',
+    headlineSuffix: 'is over!',
     subtext:
-      'The 2nd Annual Ontario Universities Sports Analytics Conference. Where academic rigor meets professional application.',
-    ctaMain: 'Register',
+      'Follow us on Instagram @ousacsportsanalytics to stay tuned for OUSAC 2027.',
+    ctaMain: 'Follow on Instagram',
     ctaSecondary: 'View Schedule',
     date: 'March 14, 2026',
     location: 'University of Toronto',

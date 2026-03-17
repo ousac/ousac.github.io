@@ -19,7 +19,7 @@ import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
  * Features:
  * - Animated Hero Section with gradient backgrounds.
  * - Event details summary (Date, Location).
- * - "Registration Open" status indicator.
+ * - Post-event conference update and Instagram CTA.
  * - Auto-rotating Keynote Speaker carousel.
  */
 export default function Home() {
@@ -29,10 +29,6 @@ export default function Home() {
   // State to track the currently displayed speaker index
   const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0);
 
-  // State to conditionally show the registration badge based on the date
-  const [showRegistrationBadge, setShowRegistrationBadge] = useState(true);
-  const [showRegistrationCTA, setShowRegistrationCTA] = useState(true);
-
   // EFFECT: Set up an interval to auto-rotate the speaker carousel every 6 seconds
   useEffect(() => {
     if (keynoteSpeakers.length <= 1) return;
@@ -41,24 +37,6 @@ export default function Home() {
     }, 6000);
     return () => clearInterval(interval);
   }, [keynoteSpeakers.length]);
-
-  // EFFECT: Check if the date is past March 13, 2026.
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const badgeCutoffDate = new Date('2026-03-13T00:00:00-04:00');
-      const ctaCutoffDate = new Date('2026-03-14T00:00:00-04:00');
-      const now = new Date();
-
-      if (now >= badgeCutoffDate) {
-        setShowRegistrationBadge(false);
-      }
-
-      if (now >= ctaCutoffDate) {
-        setShowRegistrationCTA(false);
-      }
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="flex min-h-screen flex-col pt-16">
@@ -77,15 +55,10 @@ export default function Home() {
           {/* Text Content */}
           <div>
             {/* Status Badge */}
-            {showRegistrationBadge && (
-              <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
-                </span>
-                {SITE_CONTENT.hero.statusBadge}
-              </div>
-            )}
+            <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
+              <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
+              {SITE_CONTENT.hero.statusBadge}
+            </div>
 
             {/* Main Headline */}
             <h1 className="font-display text-ousac-black mb-6 text-6xl leading-[0.9] font-bold tracking-tight sm:text-7xl lg:text-8xl">
@@ -101,17 +74,12 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col items-start gap-4 sm:flex-row">
-              {showRegistrationCTA && (
-                <AnimatedShinyButton url="/register">
-                  {SITE_CONTENT.hero.ctaMain}
-                </AnimatedShinyButton>
-              )}
+              <AnimatedShinyButton url={SITE_CONTENT.socials.instagram}>
+                {SITE_CONTENT.hero.ctaMain}
+              </AnimatedShinyButton>
               <Link
                 href="/conference/schedule"
                 className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-gray-50"
-                // Adjusted padding/rounded to match the Shiny button roughly if needed,
-                // but kept similar specific styles.
-                // Note: Shiny button has specific padding/rounded.
               >
                 {SITE_CONTENT.hero.ctaSecondary}
               </Link>
@@ -128,7 +96,7 @@ export default function Home() {
                     Date
                   </p>
                   <p className="text-lg font-semibold text-gray-900">
-                    March 14, 2026
+                    {SITE_CONTENT.hero.date}
                   </p>
                 </div>
               </div>
@@ -142,7 +110,7 @@ export default function Home() {
                     Location
                   </p>
                   <p className="text-lg font-semibold text-gray-900">
-                    University of Toronto
+                    {SITE_CONTENT.hero.location}
                   </p>
                 </div>
               </div>
