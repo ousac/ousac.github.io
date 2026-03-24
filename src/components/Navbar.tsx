@@ -10,38 +10,11 @@ import {
   MobileNavToggle,
   MobileNavMenu,
   MobileNavLink,
-  NavDropdown,
   NavItems,
 } from '@/components/ui/motion-navbar';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
-import {
-  Calendar,
-  Users,
-  Handshake,
-  MapPin,
-  Trophy,
-  Database,
-} from 'lucide-react';
-import { SITE_CONTENT } from '@/lib/constants';
 
 const Navbar: React.FC = () => {
-  const CONFERENCE_ITEMS = [
-    { label: 'Schedule', href: '/conference/schedule', icon: Calendar },
-    { label: 'Speakers', href: '/conference/speakers', icon: Users },
-    { label: 'Sponsors', href: '/conference/sponsors', icon: Handshake },
-    { label: 'Venue', href: '/conference/venue', icon: MapPin },
-    {
-      label: 'Student Competition',
-      href: '/conference/student-competition',
-      icon: Trophy,
-    },
-    {
-      label: 'Data Challenge',
-      href: '/conference/data-challenge',
-      icon: Database,
-    },
-  ];
-
   const MAIN_NAV_ITEMS = [
     { label: 'About', href: '/about' },
     { label: 'Members', href: '/members' },
@@ -56,14 +29,13 @@ const Navbar: React.FC = () => {
 
           <NavBody>
             <div className="hidden items-center lg:flex">
-              <NavDropdown label="Conference" items={CONFERENCE_ITEMS} />
               <NavItems items={MAIN_NAV_ITEMS} />
               <div className="ml-4">
                 <AnimatedShinyButton
-                  url={SITE_CONTENT.socials.instagram}
+                  url="https://linktr.ee/ousac"
                   className="rounded-full !px-6 !py-2"
                 >
-                  Instagram
+                  Get Involved
                 </AnimatedShinyButton>
               </div>
             </div>
@@ -76,25 +48,6 @@ const Navbar: React.FC = () => {
               <NavbarLogo className="text-black" />
             </MobileNavHeader>
             <MobileNavMenu>
-              {/* Conference Section Header */}
-              <div className="border-b border-gray-100 pb-1">
-                <p className="mb-2 px-2 text-sm font-semibold tracking-wide text-gray-400 uppercase">
-                  Conference
-                </p>
-                <div className="flex flex-col space-y-1 pl-2">
-                  {CONFERENCE_ITEMS.map((item) => (
-                    <MobileNavLink
-                      key={item.label}
-                      href={item.href}
-                      className="hover:text-ousac-orange flex items-center justify-between rounded-lg px-2 py-2 font-medium text-gray-600 transition-colors"
-                    >
-                      <span>{item.label}</span>
-                      <item.icon className="h-4 w-4 text-gray-400" />
-                    </MobileNavLink>
-                  ))}
-                </div>
-              </div>
-
               {/* Main Nav Items */}
               <div className="flex flex-col space-y-2 pt-4">
                 {MAIN_NAV_ITEMS.map((item) => (
@@ -110,10 +63,10 @@ const Navbar: React.FC = () => {
 
               <div className="mt-8">
                 <AnimatedShinyButton
-                  url={SITE_CONTENT.socials.instagram}
+                  url="https://linktr.ee/ousac"
                   className="w-full justify-center rounded-full !px-8 !py-3"
                 >
-                  Instagram
+                  Get Involved
                 </AnimatedShinyButton>
               </div>
             </MobileNavMenu>

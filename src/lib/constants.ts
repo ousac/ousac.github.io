@@ -603,7 +603,7 @@ export const SPONSORS = ALL_SPONSORS.filter((s) => s.isVisible);
  * Place the curated images in public/img/archive/2025/ and update these paths.
  * Using local paths ensures Next.js optimizes them.
  */
-export const ARCHIVE_PHOTOS = [
+export const ARCHIVE_PHOTOS_2025 = [
   '/img/archive/2025/photo1.jpg',
   '/img/archive/2025/photo2.jpg',
   '/img/archive/2025/photo3.jpg',
@@ -619,6 +619,16 @@ export const ARCHIVE_PHOTOS = [
   '/img/archive/2025/photo13.jpg',
   '/img/archive/2025/photo14.jpg',
   '/img/archive/2025/photo15.jpg',
+];
+
+export const ARCHIVE_PHOTOS_2026 = [
+  '/img/archive/2026/DSC05480.jpg',
+  '/img/archive/2026/DSC05624.jpg',
+  '/img/archive/2026/DSC05661.jpg',
+  '/img/archive/2026/DSC05726.jpg',
+  '/img/archive/2026/DSC05762.jpg',
+  '/img/archive/2026/DSC05841.jpg',
+  '/img/archive/2026/DSC06409.jpg',
 ];
 
 /**

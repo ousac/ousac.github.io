@@ -1,272 +1,162 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Calendar, MapPin, ChevronRight } from 'lucide-react';
-import {
-  SPEAKERS,
-  SITE_CONTENT,
-  MEMBER_CLUBS,
-  SHOW_SPEAKERS,
-} from '@/lib/constants';
-import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
 
-/**
- * Home Page Component
- *
- * The landing page for the conference.
- * Features:
- * - Animated Hero Section with gradient backgrounds.
- * - Event details summary (Date, Location).
- * - Post-event conference update and Instagram CTA.
- * - Auto-rotating Keynote Speaker carousel.
- */
+import { ArrowRight } from 'lucide-react';
+import { SITE_CONTENT, MEMBER_CLUBS } from '@/lib/constants';
+
 export default function Home() {
-  // Filter only keynote speakers for the preview carousel
-  const keynoteSpeakers = SPEAKERS.filter((s) => s.isKeynote).slice(0, 4);
-
-  // State to track the currently displayed speaker index
-  const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0);
-
-  // EFFECT: Set up an interval to auto-rotate the speaker carousel every 6 seconds
-  useEffect(() => {
-    if (keynoteSpeakers.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentSpeakerIndex((prev) => (prev + 1) % keynoteSpeakers.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [keynoteSpeakers.length]);
-
   return (
-    <div className="flex min-h-screen flex-col pt-16">
-      {/* 
-        HERO SECTION
-        Uses absolute positioning for decorative blur blobs (gradients) behind the content.
-      */}
-      <section className="relative overflow-hidden px-6 pt-8 pb-12 lg:pt-16 lg:pb-20">
-        {/* Decorative Background Gradients */}
-        <div className="absolute inset-0 z-0 bg-white">
-          <div className="bg-ousac-blue/5 absolute top-0 right-0 h-[800px] w-[800px] translate-x-1/3 -translate-y-1/2 rounded-full blur-3xl"></div>
-          <div className="bg-ousac-purple/5 absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/4 translate-y-1/3 rounded-full blur-3xl"></div>
+    <main className="bg-background flex min-h-screen flex-col pt-[72px]">
+      {/* Hero Section */}
+      <section className="bg-primary relative flex min-h-screen items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="from-primary via-primary/80 absolute inset-0 z-10 bg-gradient-to-r to-transparent"></div>
+          <Image
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6xvV5_xjPQ9GgHDergqlXjI42yicBWuhFiHytIKuS-kPx5qhNfFk03CbasiHoqgNggv35Bv4P6A-0PceHNOM8dlwB4so0oI61Cp0G-HcbQlaVJ0d5f_1Lb6Ls0w6Es9VpsSBqAMxZxLrZIvUmWOQqIQHX8XzTFx9bLNjI8PyKVn3myNfywWLyQWC6xnGBNfhVzn3FCfm-tm5OvwSa0W4nvV-cRFt4CRT0x8N5fm-hmx9nj-3983TkFjuRdXJzQDFsJF4P4oHpsy_u"
+            alt="Dynamic wide-angle shot of a professional basketball arena court"
+            fill
+            className="object-cover opacity-40 grayscale"
+            unoptimized
+          />
         </div>
-
-        <div className="animate-fade-in-up relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-          {/* Text Content */}
-          <div>
-            {/* Status Badge */}
-            <div className="text-ousac-blue mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
-              <span className="bg-ousac-blue relative inline-flex h-2 w-2 rounded-full"></span>
-              {SITE_CONTENT.hero.statusBadge}
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="font-display text-ousac-black mb-6 text-6xl leading-[0.9] font-bold tracking-tight sm:text-7xl lg:text-8xl">
-              {SITE_CONTENT.hero.headlinePrefix} <br />
-              <span className="from-ousac-blue to-ousac-purple bg-gradient-to-r bg-clip-text text-transparent">
-                {SITE_CONTENT.hero.headlineSuffix}
-              </span>
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-8">
+          <div className="max-w-3xl">
+            <span className="mb-6 inline-block rounded-full bg-blue-700 px-4 py-1 font-sans text-xs font-bold tracking-widest text-white uppercase">
+              Precision in Performance
+            </span>
+            <h1 className="font-display mb-8 text-5xl leading-[0.9] font-black tracking-tighter text-white uppercase md:text-7xl">
+              ONTARIO UNIVERSITIES
+              <br />
+              <span className="text-[#4069f2]">SPORTS ANALYTICS</span>
+              <br />
+              COALITION.
             </h1>
-
-            <p className="mb-8 max-w-lg text-lg leading-relaxed font-light text-gray-600 md:text-xl">
-              {SITE_CONTENT.hero.subtext}
+            <p className="mb-10 max-w-xl font-sans text-xl leading-relaxed text-slate-300">
+              The central hub for sports analytics research in Ontario.
+              Connecting students from across the province with professional
+              industry leaders.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col items-start gap-4 sm:flex-row">
-              <AnimatedShinyButton url={SITE_CONTENT.socials.instagram}>
-                {SITE_CONTENT.hero.ctaMain}
-              </AnimatedShinyButton>
-              <Link
-                href="/conference/schedule"
-                className="text-ousac-black hover:border-ousac-blue hover:text-ousac-blue inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-8 py-3 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-gray-50"
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a
+                href={SITE_CONTENT.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display rounded-full bg-blue-700 px-8 py-4 text-center font-bold tracking-tight text-white uppercase shadow-xl shadow-blue-700/20 transition-all hover:bg-blue-600"
               >
-                {SITE_CONTENT.hero.ctaSecondary}
+                Follow us on Instagram
+              </a>
+              <a
+                href={SITE_CONTENT.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display rounded-full bg-[#0077b5] px-8 py-4 text-center font-bold tracking-tight text-white uppercase shadow-xl shadow-[#0077b5]/20 transition-all hover:bg-[#006097]"
+              >
+                Follow us on LinkedIn
+              </a>
+              <Link
+                href="/past-conferences"
+                className="font-display rounded-full border border-white/20 bg-transparent px-8 py-4 text-center font-bold tracking-tight text-white uppercase backdrop-blur-sm transition-all hover:bg-white/10"
+              >
+                View Past Conference
               </Link>
             </div>
-
-            {/* Quick Details - Emphasized */}
-            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/60 px-5 py-3 shadow-sm backdrop-blur-xl">
-                <div className="text-ousac-purple rounded-lg bg-white p-2 shadow-sm">
-                  <Calendar className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold tracking-wider text-gray-400 uppercase">
-                    Date
-                  </p>
-                  <p className="text-lg font-semibold text-gray-900">
-                    {SITE_CONTENT.hero.date}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/60 px-5 py-3 shadow-sm backdrop-blur-xl">
-                <div className="text-ousac-purple rounded-lg bg-white p-2 shadow-sm">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold tracking-wider text-gray-400 uppercase">
-                    Location
-                  </p>
-                  <p className="text-lg font-semibold text-gray-900">
-                    {SITE_CONTENT.hero.location}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Hero Visual - School Logos Grid */}
-          <div className="relative flex min-h-[280px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/50 bg-white/60 p-4 shadow-2xl shadow-blue-900/10 backdrop-blur-xl md:min-h-[350px] md:p-6 lg:h-[450px] lg:p-8">
-            {/* Background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+      {/* Participating Universities */}
+      <section className="bg-[#f2f3ff] py-16">
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <h2 className="font-display mb-2 text-4xl font-extrabold tracking-tight text-[#000a1e]">
+                PARTICIPATING UNIVERSITIES
+              </h2>
+              <div className="h-1 w-20 bg-blue-700"></div>
+            </div>
+            <p className="font-sans text-sm font-semibold tracking-widest text-slate-600 uppercase">
+              Founded on Institutional Excellence
+            </p>
+          </div>
+          <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-5">
+            {MEMBER_CLUBS.map((club) => (
+              <div
+                key={club.id}
+                className="group relative flex h-40 items-center justify-center overflow-hidden rounded-xl bg-[#dae2fd] p-6 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="relative h-24 w-full transform transition-all duration-300 group-hover:scale-105">
+                  <Image
+                    src={club.universityLogo}
+                    alt={club.name}
+                    fill
+                    className="object-contain drop-shadow-sm filter group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="relative z-10 w-full">
-              <p className="mb-4 text-center text-xs font-bold tracking-widest text-gray-400 uppercase md:mb-10 md:text-sm">
-                Participating Universities
+      {/* Member Conferences Section */}
+      <section className="overflow-hidden bg-white py-16">
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="rounded-2xl border border-slate-200 bg-[#f2f3ff] p-8">
+            <h4 className="font-display mb-4 text-xl font-bold text-[#000a1e]">
+              Member Conferences
+            </h4>
+            <p className="mb-6 font-sans text-slate-600">
+              Annual summits featuring leading analysts from the NBA, NHL, and
+              Olympic committees.
+            </p>
+            <Link
+              href="/past-conferences"
+              className="font-display group flex items-center gap-2 text-sm font-bold text-blue-700 uppercase"
+            >
+              Learn More
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative bg-[#000a1e] py-16">
+        <div className="relative z-10 mx-auto max-w-7xl px-8">
+          <div className="relative flex flex-col items-center justify-between gap-12 overflow-hidden rounded-3xl bg-white p-12 shadow-2xl md:flex-row md:p-20">
+            <div className="absolute top-0 right-0 -mt-32 -mr-32 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"></div>
+            <div className="relative z-10 max-w-xl">
+              <h2 className="font-display mb-6 text-4xl leading-tight font-black text-[#000a1e] md:text-5xl">
+                Ready to redefine the{' '}
+                <span className="text-blue-700">standard</span> of excellence?
+              </h2>
+              <p className="font-sans text-lg text-slate-600">
+                Whether you&apos;re a student, professor, or industry leader,
+                the Ontario Universities Sports Analytics Coalition is your
+                gateway to the future of the game.
               </p>
-              <div className="grid grid-cols-2 items-center justify-items-center gap-4 md:grid-cols-3 md:gap-8">
-                {MEMBER_CLUBS.map((club) => (
-                  <div
-                    key={club.id}
-                    className="relative h-20 w-20 transition-transform duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 sm:h-24 sm:w-24 md:h-28 md:w-28 md:opacity-80 md:grayscale"
-                  >
-                    <Image
-                      src={club.universityLogo}
-                      alt={club.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="relative z-10 flex w-full flex-col gap-4 md:w-auto">
+              <a
+                href="https://linktr.ee/ousac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display rounded-full bg-[#000a1e] px-10 py-5 text-center font-bold tracking-tight text-white uppercase shadow-lg transition-transform hover:scale-105"
+              >
+                Get Involved
+              </a>
+              <a
+                href="mailto:info.ousac@gmail.com"
+                className="font-display rounded-full border-2 border-[#000a1e] bg-white px-10 py-5 text-center font-bold tracking-tight text-[#000a1e] uppercase transition-colors hover:bg-[#000a1e]/5"
+              >
+                Partner Inquiry
+              </a>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Intro Text / Value Prop */}
-      <section className="bg-ousac-blue/5 px-6 py-12">
-        <div className="animate-fade-in-up mx-auto max-w-3xl text-center delay-200">
-          <h2 className="font-display text-ousac-black mb-4 text-4xl font-bold">
-            {SITE_CONTENT.valueProp.title}
-          </h2>
-          <p className="text-xl leading-relaxed font-light text-gray-600">
-            {SITE_CONTENT.valueProp.text}
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Speakers Preview (Carousel) */}
-
-      {SHOW_SPEAKERS && keynoteSpeakers.length > 0 && (
-        <section className="border-t border-gray-100 bg-white px-6 py-12">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-12 flex items-end justify-between">
-              <div>
-                <span className="text-ousac-purple mb-2 block text-xs font-bold tracking-widest uppercase">
-                  {SITE_CONTENT.speakers.label}
-                </span>
-                <h2 className="font-display text-ousac-black text-4xl font-bold">
-                  {SITE_CONTENT.speakers.title}
-                </h2>
-              </div>
-              <Link
-                href="/conference/speakers"
-                className="text-ousac-black hover:text-ousac-blue group hidden items-center gap-2 text-sm font-bold transition-colors sm:flex"
-              >
-                {SITE_CONTENT.speakers.link}{' '}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="shadow-card animate-fade-in-up grid gap-0 overflow-hidden rounded-2xl border border-gray-100 lg:grid-cols-2">
-              {/* Carousel Image Side */}
-              <div className="relative h-72 overflow-hidden bg-gray-200 lg:h-auto">
-                <Image
-                  key={currentSpeakerIndex}
-                  src={keynoteSpeakers[currentSpeakerIndex].imagePath}
-                  alt="Speaker"
-                  fill
-                  className="animate-fade-in object-cover"
-                />
-                <div className="absolute top-6 left-6 z-10">
-                  <span className="text-ousac-black rounded bg-white/90 px-3 py-1 text-[10px] font-bold tracking-wider uppercase shadow-sm backdrop-blur">
-                    Keynote
-                  </span>
-                </div>
-              </div>
-
-              {/* Carousel Content Side */}
-              <div className="relative flex flex-col justify-center bg-white p-10 lg:p-12">
-                <div className="flex-grow">
-                  <div className="mb-6 flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="font-display text-ousac-black animate-fade-in mb-2 text-3xl font-bold md:text-4xl">
-                        {keynoteSpeakers[currentSpeakerIndex].firstName}{' '}
-                        {keynoteSpeakers[currentSpeakerIndex].lastName}
-                      </h3>
-                      <p className="text-ousac-blue animate-fade-in text-lg font-medium delay-100">
-                        {keynoteSpeakers[currentSpeakerIndex].role},{' '}
-                        {keynoteSpeakers[currentSpeakerIndex].organization}
-                      </p>
-                    </div>
-
-                    {keynoteSpeakers[currentSpeakerIndex].companyLogo && (
-                      <div
-                        className={`relative h-16 w-16 flex-shrink-0 rounded-lg p-2 shadow-sm md:h-20 md:w-20 ${keynoteSpeakers[currentSpeakerIndex].companyLogoDarkBackground ? 'bg-black' : 'bg-white'}`}
-                      >
-                        <Image
-                          src={
-                            keynoteSpeakers[currentSpeakerIndex].companyLogo!
-                          }
-                          alt={
-                            keynoteSpeakers[currentSpeakerIndex].organization
-                          }
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    )}
-                  </div>
-
-                  <p className="animate-fade-in mb-8 leading-relaxed text-gray-500 delay-200">
-                    {keynoteSpeakers[currentSpeakerIndex].bio}
-                  </p>
-                </div>
-
-                {/* Carousel Indicators — only shown when there are multiple speakers */}
-                {keynoteSpeakers.length > 1 && (
-                  <div className="flex gap-2">
-                    {keynoteSpeakers.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSpeakerIndex(idx)}
-                        className={`h-1 rounded-full transition-all duration-300 ${
-                          idx === currentSpeakerIndex
-                            ? 'bg-ousac-black w-12'
-                            : 'w-4 bg-gray-200 hover:bg-gray-300'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Mobile "View All" Link */}
-            <div className="mt-8 text-center sm:hidden">
-              <Link
-                href="/conference/speakers"
-                className="text-ousac-black inline-flex items-center text-sm font-bold"
-              >
-                View All <ChevronRight className="ml-1 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-    </div>
+    </main>
   );
 }
