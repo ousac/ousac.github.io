@@ -33,7 +33,8 @@ const CONFERENCE_DATA = {
     youtubeEmbedUrl:
       'https://www.youtube.com/embed/videoseries?list=PLr2OzjhD5fn9326cg0H1pAgdoJLy-NE3a',
     photos: ARCHIVE_PHOTOS_2025,
-    eventPhotosDrive: null,
+    eventPhotosDrive:
+      'https://drive.google.com/drive/folders/1Fz6VaCbCTwlmvQ1-z1WBb_PgUquonMXJ',
   },
 };
 
