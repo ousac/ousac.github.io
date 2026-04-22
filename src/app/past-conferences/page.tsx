@@ -175,8 +175,11 @@ export default function PastConferences() {
                 <h2 className="font-display text-2xl font-bold text-[#000a1e]">
                   Recorded Sessions
                 </h2>
+                <a href={currentData.youtubeEmbedUrl.replace('/embed/videoseries', '/playlist')} className="ml-auto text-sm font-semibold text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  View Entire Playlist on YouTube
+                </a>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-gray-900/10">
+              <div className="relative overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-gray`-900/10">
                 <iframe
                   src={currentData.youtubeEmbedUrl}
                   title={`OUSAC ${activeYear} Sessions`}
