@@ -33,9 +33,6 @@ export default function PrivacyPolicy() {
             <li>Name and contact information (email address)</li>
             <li>University affiliation and role</li>
             <li>Dietary restrictions (for event catering)</li>
-            <li>
-              Payment information (processed securely via third-party providers)
-            </li>
           </ul>
 
           <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
@@ -50,7 +47,7 @@ export default function PrivacyPolicy() {
             <li>
               Communicate with you about event updates, schedules, and changes
             </li>
-            <li>Process registrations and payments</li>
+            <li>Process conference registrations</li>
             <li>Maintain the safety and security of our event</li>
           </ul>
 
