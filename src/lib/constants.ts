@@ -48,6 +48,7 @@ export const SITE_CONTENT = {
     instagram: 'https://www.instagram.com/ousacsportsanalytics/',
     linkedin:
       'https://www.linkedin.com/company/ontario-universities-sports-analytics-coalition/',
+    x: 'https://x.com/_ousac',
   },
 };
 

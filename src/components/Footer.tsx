@@ -41,6 +41,14 @@ const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
+              href={SITE_CONTENT.socials.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm text-slate-400 transition-colors hover:text-blue-400"
+            >
+              X
+            </a>
+            <a
               href="mailto:info.ousac@gmail.com"
               className="font-sans text-sm text-slate-400 transition-colors hover:text-blue-400"
             >
