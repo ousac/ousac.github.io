@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ArrowRight } from 'lucide-react';
 import { SITE_CONTENT, MEMBER_CLUBS } from '@/lib/constants';
 
 export default function Home() {
@@ -26,14 +25,25 @@ export default function Home() {
             <span className="mb-6 inline-block rounded-full bg-blue-700 px-4 py-1 font-sans text-xs font-bold tracking-widest text-white uppercase">
               Precision in Performance
             </span>
-            <h1 className="font-display mb-8 text-5xl leading-[0.9] font-black tracking-tighter text-white uppercase md:text-7xl">
+            <div className="mb-6 flex flex-col gap-1">
+              <span className="font-sans text-xs font-bold tracking-widest text-[#4069f2] uppercase">
+                Save the Date
+              </span>
+              <span className="font-display text-xl font-bold text-white sm:text-2xl">
+                March 20, 2027 &mdash; Toronto, Ontario
+              </span>
+              <span className="font-sans text-xs font-semibold tracking-wide text-slate-400">
+                Registration opening soon
+              </span>
+            </div>
+            <h1 className="font-display mb-8 text-4xl leading-[0.9] font-black tracking-tighter text-white uppercase md:text-6xl">
               ONTARIO UNIVERSITIES
               <br />
               <span className="text-[#4069f2]">SPORTS ANALYTICS</span>
               <br />
               COALITION.
             </h1>
-            <p className="mb-10 max-w-xl font-sans text-xl leading-relaxed text-slate-300">
+            <p className="mb-10 max-w-xl font-sans text-lg leading-relaxed text-slate-300">
               The central hub for sports analytics research in Ontario.
               Connecting students from across the province with professional
               industry leaders.
@@ -100,28 +110,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Member Conferences Section */}
-      <section className="overflow-hidden bg-white py-16">
-        <div className="mx-auto max-w-7xl px-8">
-          <div className="rounded-2xl border border-slate-200 bg-[#f2f3ff] p-8">
-            <h4 className="font-display mb-4 text-xl font-bold text-[#000a1e]">
-              Member Conferences
-            </h4>
-            <p className="mb-6 font-sans text-slate-600">
-              Annual summits featuring leading analysts from the NBA, NHL, and
-              Olympic committees.
-            </p>
-            <Link
-              href="/past-conferences"
-              className="font-display group flex items-center gap-2 text-sm font-bold text-blue-700 uppercase"
-            >
-              Learn More
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="relative bg-[#000a1e] py-16">
         <div className="relative z-10 mx-auto max-w-7xl px-8">
@@ -148,7 +136,7 @@ export default function Home() {
                 Get Involved
               </a>
               <a
-                href="mailto:info.ousac@gmail.com"
+                href="mailto:info.ousac@gmail.com?subject=Partnership%20Inquiry%20-%20OUSAC%202027"
                 className="font-display rounded-full border-2 border-[#000a1e] bg-white px-10 py-5 text-center font-bold tracking-tight text-[#000a1e] uppercase transition-colors hover:bg-[#000a1e]/5"
               >
                 Partner Inquiry

@@ -4,28 +4,27 @@ import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
 import { SITE_CONTENT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'OUSAC 2026 Is Over | OUSAC',
+  title: 'OUSAC 2027 | Save the Date | OUSAC',
   description:
-    'OUSAC 2026 has wrapped. Follow @ousacsportsanalytics on Instagram for OUSAC 2027 updates.',
+    'OUSAC 2027 takes place March 20, 2027 in Toronto, Ontario. Registration opening soon.',
 };
 
 export default function RegisterPage() {
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 pt-20 pb-20 lg:pt-28 lg:pb-28">
+    <div className="bg-linear-to-b from-white to-blue-50 pt-20 pb-20 lg:pt-28 lg:pb-28">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="rounded-[2rem] border border-blue-100 bg-white p-8 text-center shadow-xl shadow-blue-900/5 sm:p-12">
           <span className="text-ousac-blue mb-4 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
-            Conference Update
+            Registration Opening Soon
           </span>
 
           <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            OUSAC 2026 is over!
+            Save the Date: March 20, 2027
           </h1>
 
           <p className="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-gray-700">
-            Thanks to everyone who joined us at the University of Toronto on
-            March 14, 2026. Follow us on Instagram @ousacsportsanalytics to stay
-            tuned for OUSAC 2027.
+            OUSAC 2027 is heading to Toronto, Ontario. Follow us on Instagram
+            @ousacsportsanalytics for registration updates.
           </p>
 
           <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-gray-500 sm:text-base">

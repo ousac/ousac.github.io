@@ -39,12 +39,7 @@ export interface ScheduleItem {
   endTime: string; // Display string (e.g., "12:30 PM")
   title: string;
   type:
-    | 'Keynote'
-    | 'Panel'
-    | 'Workshop'
-    | 'Networking'
-    | 'Break'
-    | 'Competition';
+    'Keynote' | 'Panel' | 'Workshop' | 'Networking' | 'Break' | 'Competition';
   track?: 'Technical' | 'Business'; // Optional track for filtering
   location?: string;
   description?: string;
