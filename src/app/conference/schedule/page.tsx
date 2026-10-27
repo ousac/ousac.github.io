@@ -10,6 +10,7 @@ import {
 } from '@/lib/constants';
 import { MapPin, X, ChevronRight } from 'lucide-react';
 import { ScheduleItem, Speaker } from '@/types/types';
+import PastEventBanner from '@/components/PastEventBanner';
 
 /**
  * Schedule Page Component
@@ -38,6 +39,7 @@ export default function Schedule() {
     <div className="min-h-screen bg-white pt-16 pb-12 md:pt-24 md:pb-20">
       {/* Page Header */}
       <div className="animate-fade-in-up mx-auto mb-8 max-w-4xl px-6 text-center">
+        <PastEventBanner pastYear={2026} label="schedule" />
         <h1 className="font-display text-ousac-black mb-4 text-4xl font-bold md:text-5xl">
           Schedule
         </h1>

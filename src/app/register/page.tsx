@@ -1,13 +1,16 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { AnimatedShinyButton } from '@/components/ui/animated-shiny-button';
-import { SITE_CONTENT } from '@/lib/constants';
+import { CURRENT_CONFERENCE, SITE_CONTENT } from '@/lib/constants';
+import { pageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'OUSAC 2027 | Save the Date | OUSAC',
-  description:
-    'OUSAC 2027 takes place March 20, 2027 in Toronto, Ontario. Registration opening soon.',
-};
+const { year, date, location } = CURRENT_CONFERENCE;
+
+export const metadata: Metadata = pageMetadata({
+  title: `OUSAC ${year} — Save the Date`,
+  description: `OUSAC ${year} takes place ${date} in ${location}. Registration opening soon.`,
+  path: '/register',
+});
 
 export default function RegisterPage() {
   return (
@@ -19,11 +22,11 @@ export default function RegisterPage() {
           </span>
 
           <h1 className="font-display text-ousac-black mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Save the Date: March 20, 2027
+            Save the Date: {date}
           </h1>
 
           <p className="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-gray-700">
-            OUSAC 2027 is heading to Toronto, Ontario. Follow us on Instagram
+            OUSAC {year} is heading to {location}. Follow us on Instagram
             @ousacsportsanalytics for registration updates.
           </p>
 

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { BadgeCheck, FileText, Mic, Trophy } from 'lucide-react';
+import PastEventBanner from '@/components/PastEventBanner';
 
 export default function StudentCompetition() {
   return (
@@ -10,6 +11,7 @@ export default function StudentCompetition() {
       <div className="relative overflow-hidden bg-gray-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
+            <PastEventBanner pastYear={2026} label="student competition" />
             <h1 className="font-display text-ousac-black text-4xl font-bold tracking-tight sm:text-6xl">
               Student Competition
             </h1>

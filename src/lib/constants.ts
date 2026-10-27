@@ -16,24 +16,18 @@ export const SHOW_SPEAKERS = true;
 export const SHOW_SPONSORS = true;
 export const SHOW_SCHEDULE = true;
 
+// Upcoming conference — single source of truth for dates shown across the site.
+// Note: /public/img/og-image.png has the date baked in; regenerate it if this changes.
+export const CURRENT_CONFERENCE = {
+  year: 2027,
+  date: 'March 20, 2027',
+  location: 'Toronto, Ontario',
+};
+
 export const SITE_CONTENT = {
   navbar: {
     title: 'OUSAC',
     logoAlt: 'OUSAC Logo',
-  },
-  hero: {
-    statusBadge: 'Conference Update',
-    headlinePrefix: 'OUSAC 2026',
-    headlineSuffix: 'is over!',
-    subtext:
-      'Follow us on Instagram @ousacsportsanalytics to stay tuned for OUSAC 2027.',
-    ctaMain: 'Follow on Instagram',
-    ctaSecondary: 'View Schedule',
-    date: 'March 14, 2026',
-    location: 'University of Toronto',
-    statsTitle: 'Live Data Challenges',
-    statsText: 'Compete with student talent across the province.',
-    imageAlt: 'Analytics Visualization',
   },
   valueProp: {
     title: 'Bridging the Gap',
@@ -168,7 +162,7 @@ const ALL_SPEAKERS: Speaker[] = [
     firstName: 'OJ',
     lastName: 'Adeyemi',
     role: 'Computer Science Student',
-    organization: 'University of Toronto',
+    organization: 'York University',
     bio: 'Presentation of the winning submission for the Canada Basketball Data Challenge.',
     imagePath: '/img/speakers/oj_adeyemi.jpg',
     category: 'Student',
