@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://ousac.ca/sitemap.xml
+Sitemap: https://www.ousac.ca/sitemap.xml
