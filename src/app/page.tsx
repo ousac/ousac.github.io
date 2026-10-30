@@ -3,7 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { SITE_CONTENT, MEMBER_CLUBS } from '@/lib/constants';
+import {
+  CURRENT_CONFERENCE,
+  SITE_CONTENT,
+  MEMBER_CLUBS,
+} from '@/lib/constants';
 
 export default function Home() {
   return (
@@ -30,7 +34,7 @@ export default function Home() {
                 Save the Date
               </span>
               <span className="font-display text-xl font-bold text-white sm:text-2xl">
-                March 20, 2027 &mdash; Toronto, Ontario
+                {CURRENT_CONFERENCE.date} &mdash; {CURRENT_CONFERENCE.location}
               </span>
               <span className="font-sans text-xs font-semibold tracking-wide text-slate-400">
                 Registration opening soon
@@ -136,7 +140,7 @@ export default function Home() {
                 Get Involved
               </a>
               <a
-                href="mailto:info.ousac@gmail.com?subject=Partnership%20Inquiry%20-%20OUSAC%202027"
+                href={`mailto:info.ousac@gmail.com?subject=Partnership%20Inquiry%20-%20OUSAC%20${CURRENT_CONFERENCE.year}`}
                 className="font-display rounded-full border-2 border-[#000a1e] bg-white px-10 py-5 text-center font-bold tracking-tight text-[#000a1e] uppercase transition-colors hover:bg-[#000a1e]/5"
               >
                 Partner Inquiry

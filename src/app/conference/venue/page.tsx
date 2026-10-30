@@ -1,5 +1,14 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { MapPin, Car, Train } from 'lucide-react';
+import { pageMetadata } from '@/lib/metadata';
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Venue',
+  description:
+    'OUSAC is held at the Bahen Centre for Information Technology, University of Toronto (40 St. George St). Directions, parking and transit info.',
+  path: '/conference/venue',
+});
 
 /**
  * Venue Page Component

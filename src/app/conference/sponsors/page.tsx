@@ -3,12 +3,14 @@ import Image from 'next/image';
 import { Mail } from 'lucide-react';
 import { SPONSORS, SHOW_SPONSORS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { pageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Sponsors | OUSAC 2026',
+export const metadata: Metadata = pageMetadata({
+  title: 'Sponsors',
   description:
-    'Meet the sponsors and partners supporting the 2nd annual Ontario University Sports Analytics Conference.',
-};
+    'Meet the sponsors and partners supporting the Ontario Universities Sports Analytics Conference, and explore sponsorship opportunities.',
+  path: '/conference/sponsors',
+});
 
 const SPONSORSHIP_PACKAGE_URL =
   'https://drive.google.com/file/d/1CsZQhmkIYqIUHuJ_nr6anJXY_E_kW_rq/view?usp=sharing';

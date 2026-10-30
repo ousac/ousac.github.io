@@ -3,6 +3,8 @@ import { Inter, League_Spartan } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CURRENT_CONFERENCE } from '@/lib/constants';
+import { OG_IMAGE, SITE_URL } from '@/lib/metadata';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,8 +17,11 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ousac.ca'),
-  title: 'OUSAC | Ontario Universities Sports Analytics Coalition',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'OUSAC | Ontario Universities Sports Analytics Coalition',
+    template: '%s | OUSAC',
+  },
   description:
     'Join us for the premier student-run sports analytics conference in Ontario. Featuring keynote speakers from pro sports and research presentations.',
   keywords: [
@@ -36,26 +41,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://ousac.ca',
-    title: 'OUSAC 2026 | Ontario Universities Sports Analytics Conference',
+    url: '/',
+    title: `OUSAC ${CURRENT_CONFERENCE.year} | Ontario Universities Sports Analytics Conference`,
     description:
       'The central hub for sports analytics research in Ontario. Connecting students with industry leaders.',
     siteName: 'OUSAC',
-    images: [
-      {
-        url: '/img/ousac_logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'OUSAC Logo',
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'OUSAC',
     description:
       'The premier student-run sports analytics conference in Ontario.',
-    images: ['/img/ousac_logo.png'],
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: '/icon.png', // Next.js specific for app router

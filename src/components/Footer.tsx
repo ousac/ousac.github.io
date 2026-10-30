@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col items-start justify-center md:items-end">
           <p className="font-sans text-sm text-slate-500">
-            © 2026 OUSAC. All rights reserved.
+            © {new Date().getFullYear()} OUSAC. All rights reserved.
           </p>
         </div>
       </div>
